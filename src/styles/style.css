@@ -3,15 +3,16 @@
     --bgcolor: #f0f0f0;
     --bgcolor2: rgb(247, 247, 247);
     --navcolor: #f0f0f0dc;
-    /* DARK
-    --bgcolor: #1b1b1b;
-    --bgcolor2: #2b2b2b;
-    --navcolor: #1b1b1bce;
-    */
     --color1: #d90429;
     --color2: #1b1b1b;
     --card: white;
     --font: 'Poppins', sans-serif;
+}
+.dark-theme{
+    --bgcolor: #1b1b1b;
+    --bgcolor2: #2b2b2b;
+    --navcolor: #1b1b1bce;
+    --color2: #f0f0f0;
 }
 *{
     margin: 0;
@@ -150,7 +151,7 @@ nav{
                 color: var(--color1);
             }
             position: absolute;
-            right: -200px;
+            right: 0;
             width: 50%;
             background-color: var(--bgcolor2);
         }
