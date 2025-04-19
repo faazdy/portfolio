@@ -58,7 +58,7 @@ export const projects = [
         description: "GG Nexus is a modern and responsive landing page for a gaming center. Built with React and Bootstrap, it showcases the center's services, customer reviews, and reservation form. The design includes animated sections, a service pricing grid, and a dynamic carousel for user experiences. GG Nexus is fully deployable and mobile-friendly, created to attract gamers and simplify booking through a clean and interactive interface.",
         stack:[React, Bootstrap, Sass],
         cardImg: '/assets/content/projects/ggnexus.png',
-        url: "https://zenify-meditapp.netlify.app/"
+        url: "https://ggnexusgaming.netlify.app/"
     },
     {
         id: uuid(),
