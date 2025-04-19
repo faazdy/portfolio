@@ -224,9 +224,9 @@ nav{
             justify-content: flex-end;
             box-shadow: rgba(109, 8, 13, 0.2) 0 0 5px 1px;
             .content{
-                background-color: rgba(3, 3, 3, 0.493);
-                backdrop-filter: blur(2px);
-                -webkit-backdrop-filter: blur(2px);
+                background-color: rgba(14, 14, 14, 0.548);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
                 padding: 1em;
                 color: white;
                 h4{font-size: 20px; font-weight: 500;}
