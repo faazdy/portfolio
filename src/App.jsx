@@ -2,6 +2,7 @@ import React from 'react'
 import { projects } from './data/data'
 import { stackLanguages } from './data/data'
 import Navbar from './components/Navbar'
+import ProjectCard from './components/ProjectCard'
 
 function App() {
     return (
@@ -33,22 +34,7 @@ function App() {
                     <article className="pj-container">
                         {projects.map(project => {
                             return (
-                                <div className="card" key={project.id} style={{ backgroundImage: `url(${project.cardImg})` }}>
-                                    <div className="content">
-                                        <h4>{project.nameProject}</h4>
-                                        <p>{project.description}</p>
-                                        <div>
-                                            <div className="stack">
-                                                {
-                                                    project.stack.map((icon, index) => {
-                                                        return <img src={icon} alt="icon-stack" key={index}/>
-                                                    })
-                                                }
-                                            </div>
-                                            <a href={project.url}>View</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ProjectCard {...project} key={project.id}/>
                             )
                         })}
                     </article>
