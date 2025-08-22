@@ -28,6 +28,7 @@ body{
     color: var(--color2);
     max-width: 1900px;
     margin: 0 auto;
+    font-weight: 300;
 }
 
 header{position: sticky; top: 0; z-index: 3;}
@@ -207,10 +208,18 @@ nav{
     background-color: var(--bgcolor2);
     .pj-container{
         width: 100%;
+
+        display: grid;
+        align-items: stretch;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        
+        gap: 10px;
+        /*
         display: flex;
         gap: 5px;
         align-items: center;
         flex-wrap: wrap;
+        
         .card{
             overflow: hidden;
             background-size: cover;
@@ -236,11 +245,11 @@ nav{
                     overflow-y: auto;
                 }
                 p::-webkit-scrollbar {
-                    width: 5px; /* Ancho del scrollbar */
+                    width: 5px; 
                 }
                 p::-webkit-scrollbar-thumb {
-                    background-color: #810016; /* Color del pulgar */
-                    border-radius: 6px; /* Bordes redondeados del pulgar */
+                    background-color: #810016; 
+                    border-radius: 6px; 
                     cursor: pointer;
                 }
             }
@@ -256,7 +265,7 @@ nav{
                 padding: 1px 15px;
             }
             a:hover{background-color: var(--color1); color: white;}
-        }
+        }*/
     }
 }
 .about{
