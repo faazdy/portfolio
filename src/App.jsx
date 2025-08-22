@@ -22,7 +22,7 @@ function App() {
                     </div>
                     <div className="social">
                         <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
-                            <img src="assets/icons/linkedin.png" alt="fiverr" />
+                            <img src="assets/icons/linkedin.png" alt="linkedIn" />
                         </a>
                         <a href="https://github.com/faazdy">
                             <img src="assets/icons/icons8-github-480.png" alt="git" />
