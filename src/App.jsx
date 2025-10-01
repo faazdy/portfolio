@@ -74,12 +74,6 @@ function App() {
                                 <img src="assets/icons/email.png" alt="icon-contact" />
                                 <span>leorengifor.dev@gmail.com</span>
                             </div>
-                            <a href="https://www.instagram.com/fzdy1.js">
-                                <div className="contact-card">
-                                    <img src="assets/icons/insta.png" alt="icon-contact" />
-                                    <span>fzdy1.js</span>
-                                </div>
-                            </a>
                             <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
                                 <div className="contact-card">
                                     <img src="assets/icons/linkedin.png" alt="icon-contact" />
