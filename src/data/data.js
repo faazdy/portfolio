@@ -28,7 +28,7 @@ export const projects = [
         stack:[React, Sass],
         techStack: ["React", "Sass"],
         cardImg: '/assets/content/projects/uikomponents.png',
-        url: "https://uikomponents.netlify.app/"
+        url: "https://uikomponents.vercel.app/"
     },
     {
         id: uuid(),
