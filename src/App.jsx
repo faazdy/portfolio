@@ -12,7 +12,7 @@ function App() {
                 <section className="hero-intro" id="hero">
                     <h4>Hello!</h4>
                     <h1>I'm <span>Leonardo</span></h1>
-                    <h3>Front-end Developer</h3>
+                    <h3>Systems engineer & Frontend Developer</h3>
                     <p>
                         "Every is posible."
                     </p>
@@ -29,42 +29,43 @@ function App() {
                         </a>
                     </div>
                 </section>
+                <section className="about-me" id='about-me'>
+                    <h2>About me</h2>
+                    <p>
+                        I'm a passionate Front-end web developer with a pure dedication to my work.
+                        My enthusiasm for crafting exceptional web experiences is evident in every project I undertake. Currently, I'm immersed in my journey as a systems engineering student,
+                        allowing me to continuously expand my skills and knowledge. If you're interested in collaborating on exciting projects or have any questions, feel free to contact me through the links provided below.
+                        I look forward to contributing to the success of your next project!
+                    </p>
+                    <a href="#contact" className='btn'>Let's Connect</a>
+                </section>
                 <section className="projects" id="projects">
-                    <h2>Projects/</h2>
+                    <h2>Featured Projects</h2>
                     <article className="pj-container">
                         {projects.map(project => {
                             return (
-                                <ProjectCard {...project} key={project.id}/>
+                                <ProjectCard {...project} key={project.id} />
                             )
                         })}
                     </article>
                 </section>
-                <section className="about" id="about">
-                    <h2>About me/</h2>
-                    <article className="about-container">
-                        <p>
-                            I'm a passionate Front-end web developer with a pure dedication to my work.
-                            My enthusiasm for crafting exceptional web experiences is evident in every project I undertake. Currently, I'm immersed in my journey as a systems engineering student,
-                            allowing me to continuously expand my skills and knowledge. If you're interested in collaborating on exciting projects or have any questions, feel free to contact me through the links provided below.
-                            I look forward to contributing to the success of your next project!
-                        </p>
-                        <div className="stack-container">
-                            {
-                                stackLanguages.map(icon => {
-                                    return (
-                                        <div className="st-card" key={icon.id}>
-                                            <img src={icon.icon} alt="stack" />
-                                            <span>{icon.nameTechnology}</span>
-                                        </div>
-                                    )
-                                })
-                            }
-
-                        </div>
-                    </article>
+                <section className="stack" id="stack">
+                    <h2>Skills</h2>
+                    <div className="stack-container">
+                        {
+                            stackLanguages.map(icon => {
+                                return (
+                                    <div className="stack-card" key={icon.id}>
+                                        <img src={icon.icon} alt="stack" />
+                                        <span>{icon.nameTechnology}</span>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </section>
                 <section className="contact" id="contact">
-                    <h2>Contact/</h2>
+                    <h2>Contact me</h2>
                     <article className="c-container">
                         <p>
                             You can contact me via email or Instagram. Simply press the icons to reach out to me in whichever way you prefer.

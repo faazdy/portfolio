@@ -34,16 +34,14 @@ function Navbar() {
             </div>
             <div className="tags">
                 <a href="#projects">Projects</a>
-                <a href="#about">About me</a>
+                <a href="#about-me">About me</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div className="theme">
-                <label className="ui-switch">
-                    <input type="checkbox" id="dark" onChange={toggleDark}/>
-                    <div className="slider">
-                        <div className="circle"></div>
-                    </div>
+            <div className={isDark ? 'theme switch-theme' : 'theme'}>
+                <label htmlFor='dark' className="ui-switch">
+                    <img src="./assets/icons/switchtheme.png" alt="switch-theme-icon" />
                 </label>
+                <input type="checkbox" id="dark" onChange={toggleDark}/>
             </div>
             <div className="burger">
                 <label htmlFor="burger-btn">
