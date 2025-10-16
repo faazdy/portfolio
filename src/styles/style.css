@@ -265,7 +265,8 @@ nav{
     background-color: var(--bgcolor);
 
     .stack-card{
-        width: auto;
+        background-color: var(--bgcolor2);
+        width: 200px;
         padding: 1em;
         border-radius: 5px;
         transition: .3s ease-in-out;
