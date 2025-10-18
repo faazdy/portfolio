@@ -326,6 +326,7 @@ main{max-width: 1300px; margin: 0 auto;}
     }
 }
 footer{
+    margin-top: 2.5em;
     border-top: 1px solid #61616142;
     background-color: var(--bgcolor);
     color: var(--textcolor);
