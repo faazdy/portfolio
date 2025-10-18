@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import "../styles/navbar.css"
 
 function Navbar() {
     //menu
@@ -28,8 +29,8 @@ function Navbar() {
     <header>
         <nav>
             <div className="logo">
-                <a href="#hero">
-                    <img src="assets/icons/ico.png" alt="logo"/>
+                <a href="#root">
+                    <img src="assets/content/profile.jpeg" alt="logo"/>
                 </a>
             </div>
             <div className="tags">

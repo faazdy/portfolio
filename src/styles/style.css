@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     --bgcolor: #f8f9fa;
-    --bgcolor2: rgb(247, 247, 247);
+    --bgcolor2: #f8f9fa;
     --navcolor: #f0f0f0dc;
     --textcolor: #5a5a5a;
     --color1: #d90429;
     --color2: #1b1b1b;
-    --card: white;
+    --card: rgb(255, 255, 255);
     --font: 'Poppins', sans-serif;
+    --border1: #d9042728;
 }
 .dark-theme{
     --bgcolor: #1b1b1b;
-    --bgcolor2: #2b2b2b;
+    --bgcolor2: #1b1b1b;
     --navcolor: #1b1b1bce;
     --color2: #f0f0f0;
     --textcolor: #757575;
+    --border1: #d9042762;
 }
 *{
     margin: 0;
@@ -32,86 +34,9 @@ body{
     margin: 0 auto;
     font-weight: 300;
 }
+main{max-width: 1300px; margin: 0 auto;}
 
-header{position: sticky; top: 0; z-index: 3;}
-nav{
-    z-index: 3;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--navcolor);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    width: 70%;
-    max-width: 900px;
-    margin: 5px auto;
-    padding: .2em 1.5em;
-    border-radius: 30px;
-    align-items: center;
-    img{width: 50px;}
-    .tags a{
-        color: var(--color2);
-        text-decoration: none;
-        font-weight: 500;
-        padding: 10px;
-    }
-    .tags a:hover{color: var(--color1);}
 
-    .theme{
-        padding: 5px;
-        width: 50px;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        label{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        input{
-            display: none;
-        }
-    }
-    .theme img {
-        width: 80%;
-        object-fit: contain;
-        cursor: pointer;
-    }
-
-    .switch-theme{
-        background-color: rgba(255, 0, 0, 0.158);
-    }
-    
-    #burger-btn{display: none;}
-    .burger{
-        display: none;
-        nav{
-            transform: scale(0);
-            transition: .2s all;
-            flex-direction: column;
-            text-align: center;
-            a{
-                padding: 1em; 
-                display: block;  
-                width: 100%;
-                text-decoration: none;
-                color: var(--color1);
-            }
-            position: absolute;
-            right: 0;
-            width: 50%;
-            background-color: var(--bgcolor2);
-        }
-    }
-}
-
-@media screen and (max-width: 750px){
-    nav{
-        width: 90%;
-    }
-}
 
 .hero-intro{
     min-height: 100vh;
@@ -168,6 +93,7 @@ nav{
     margin: 0 auto;*/
     padding: 2em 3em;
     h2{
+        font-weight: 600;
         font-size: 40px; 
         margin-top: 2.5em;
         margin-bottom: 1.5em;
@@ -216,8 +142,10 @@ nav{
 .stack h2,
 .contact h2{
     text-align: center;
+    font-size: 55px;
 }
 .projects{
+    border-top: 1px solid var(--border1);
     background-color: var(--bgcolor2);
     .pj-container{
         width: 100%;
@@ -291,7 +219,7 @@ nav{
     background-color: var(--bgcolor);
 
     .stack-card{
-        background-color: var(--bgcolor2);
+        border: 1px solid rgba(128, 128, 128, 0.137);
         width: 200px;
         padding: 1em;
         border-radius: 5px;
@@ -307,19 +235,59 @@ nav{
 
         &:hover{
             transform: translateY(-5px);
+            border-color: var(--border1);
         }
     }
 }
 
 .contact{
     background-color: var(--bgcolor2);
+    width: 100%;
+    form{
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        input, textarea{
+            background-color: transparent;
+            margin-bottom: 1em;
+            padding: 1em;
+            border: 0;
+            border: 1px solid var(--border1);
+            border-radius: 10px;
+        }
+        textarea{
+            width: 100%;
+            height: 150px;
+            resize: none;
+            overflow: auto;
+        }
+        button{
+            padding: 1em;
+            border: 0;
+            border: 1px solid #d9042728;
+            border-radius: 10px;
+            background-color: var(--color1);
+            color: white;
+        }
+    }
+    p{text-align: center; margin-bottom: 4em; color: var(--textcolor);}
     a{text-decoration: none;}
+    h3{font-weight: 400; margin: 1em 0; text-align: center;}
+    hr{
+        border: 0;
+        border: 1px solid var(--border1);
+        width: 60%;
+        margin: 0 auto;
+    }
     .c-container{
         img{max-width: 40px;}
-        p{width: 80%;}
         .tags{
             display: flex;
-            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             margin-top: 1em;
             .contact-card{
                 cursor: pointer;
@@ -334,6 +302,7 @@ nav{
                 border: 1px solid;
                 transition: .2s ease-in-out;
 
+
                 &:hover{
                     transform: translateY(-2px);
                     box-shadow: 0 0 5px 1px #c0002031;
@@ -341,13 +310,46 @@ nav{
             }
         }
     }
+    .form-status{
+        width: 200px;
+        margin: 1em auto;
+        padding: 1em;
+        border-radius: 5px;
+        background-color: rgba(83, 221, 28, 0.164);
+        border: 1px solid rgba(83, 221, 28, 0.384);
+    }
+    .bad{
+        background-color: rgba(221, 28, 28, 0.164);
+        border: 1px solid rgba(221, 28, 28, 0.315);
+        color: var(--color1);
+    }
 }
 footer{
-    background-color: #0f0f0f;
-    color: white;
+    border-top: 1px solid #61616142;
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
     text-align: center;
     padding: 1em;
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tags {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+
+        a{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--color1);
+            text-decoration: none;
+            img{width: 30px;}
+        }
+    }
 }
 @media screen and (max-width: 750px){
     .projects,
