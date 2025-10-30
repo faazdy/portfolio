@@ -122,6 +122,15 @@ function App() {
                                 <img src="assets/icons/linkedin.png" alt="icon-contact" />
                                 <span>LinkedIn</span>
                             </a>
+                            <a
+                                href="https://github.com/faazdy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-card"
+                            >
+                                <img src="assets/icons/icons8-github-480.png" alt="icon-contact" />
+                                <span>GitHub</span>
+                            </a>
                         </div>
                     </article>
                 </section>
@@ -135,11 +144,9 @@ function App() {
                 </div>
                 <div className="tags">
                     <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/linkedin.png" alt="linkedIn" />
                         LinkedIn
                     </a>
                     <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/icons8-github-480.png" alt="git" />
                         GitHub
                     </a>
                 </div>

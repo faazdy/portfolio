@@ -347,8 +347,9 @@ footer{
             display: flex;
             align-items: center;
             gap: 5px;
-            color: var(--color1);
-            text-decoration: none;
+            color: var(--textcolor);
+            text-decoration: underline;
+            
             img{width: 30px;}
         }
     }
