@@ -20,6 +20,7 @@ import SQLICON from "/assets/icons/SQLICON.svg"
 import MOTION from "/assets/icons/motion.png"
 
 
+
 export const projects = [
     {
         id: uuid(),
@@ -29,6 +30,15 @@ export const projects = [
         techStack: ["React", "Sass"],
         cardImg: '/assets/content/projects/uikomponents.png',
         url: "https://uikomponents.vercel.app/"
+    },
+    {
+        id: uuid(),
+        nameProject: 'GenMax Academy',
+        description: 'Landing page developed for GenMax Academy, an academy focused on enhancing facial aesthetics and boosting personal image, founded by well-known TikTok creators. The website presents the brand with a modern, dynamic design aimed at delivering strong visual impact and real results.',
+        stack:[React, CSS, Bootstrap],
+        techStack: ["React", "CSS", "Framer Motion", "Bootstrap"],
+        cardImg: '/assets/content/projects/genmax.png',
+        url: "https://www.genmaxacademy.com/"
     },
     {
         id: uuid(),
@@ -65,19 +75,8 @@ export const projects = [
         techStack: ["React", "Bootstrap", "Sass"],
         cardImg: '/assets/content/projects/ggnexus.png',
         url: "https://ggnexusgaming.netlify.app/"
-    },
-    {
-        id: uuid(),
-        nameProject: 'Zenify - Meditation App Landing Page',
-        description: "This is a landing page for Zenify, a meditation app designed to help users achieve inner peace and well-being through guided meditations and wellness exercises. The landing page showcases the app's key features, benefits, user testimonials, and pricing plans.",
-        stack:[HTML, CSS, Sass],
-        techStack: ["HTML", "CSS", "Sass"],
-        cardImg: '/assets/content/projects/zenify.jpeg',
-        url: "https://zenify-meditapp.netlify.app/"
     }
 ];
-
-
 
 export const stackLanguages = [
     {

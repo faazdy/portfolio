@@ -32,7 +32,7 @@ function App() {
         <>
             <Navbar />
             <main>
-                <motion.section className="hero-intro" id="hero" 
+                <motion.section className="hero-intro" id="hero"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}>
@@ -51,17 +51,16 @@ function App() {
                             <img src="assets/icons/linkedin.png" alt="linkedIn" />
                         </a>
                         <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/icons/icons8-github-480.png" alt="git" />
+                            <img src="assets/icons/icons8-github-480.png" alt="github" />
                         </a>
                     </div>
                 </motion.section>
                 <section className="about-me" id='about-me'>
                     <h2>About me</h2>
                     <p>
-                        I'm a passionate Front-end web developer with a pure dedication to my work.
-                        My enthusiasm for crafting exceptional web experiences is evident in every project I undertake. Currently, I'm immersed in my journey as a systems engineering student,
-                        allowing me to continuously expand my skills and knowledge. If you're interested in collaborating on exciting projects or have any questions, feel free to contact me through the links provided below.
-                        I look forward to contributing to the success of your next project!
+                        I’m a Systems Engineering student and front-end web developer passionate about creating clean, user-friendly interfaces. I work with HTML5, CSS3, JavaScript, and Sass, using frameworks like Bootstrap and React.
+                        Currently, I’m learning Vue.js to strengthen my front-end skills and build modern, efficient web applications. I focus on crafting responsive designs with great attention to UI/UX and performance.
+                        I’m a responsible, adaptable person who enjoys continuous learning and bringing ideas to life through code.
                     </p>
                     <a href="#contact" className='btn'>Let's Connect</a>
                 </section>
