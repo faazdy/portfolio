@@ -8,6 +8,7 @@ import JS from "/assets/icons/jsCARD.svg"
 import React from "/assets/icons/reactCARD.svg"
 import Sass from "/assets/icons/sassCARD.svg"
 import Bootstrap from "/assets/icons/boostrapCARD.png"
+import Vue from "/assets/icons/vueCARD.svg"
 
 //STACK ICONS LOGOS
 import HTMLICON from "/assets/icons/html-5-logo-svgrepo-com.svg"
@@ -18,6 +19,9 @@ import bootstrapICON from "/assets/icons/boostrap-svg.svg"
 import REACTICON from "/assets/icons/react-svgrepo-com.svg"
 import SQLICON from "/assets/icons/SQLICON.svg"
 import MOTION from "/assets/icons/motion.png"
+import WORDPRESS from "/assets/icons/wp.png"
+import TSICON from "/assets/icons/ts.png"
+import VUEICON from "/assets/icons/vue.svg"
 
 
 
@@ -33,21 +37,21 @@ export const projects = [
     },
     {
         id: uuid(),
+        nameProject: 'QRMe App | QR Generator',
+        description: 'A lightweight and fast QR code generator built with Vue and Sass. Users can create custom QR codes in seconds, preview them instantly, and download them in high-quality PNG format through a clean and responsive UI.',
+        stack:[Vue, Sass],
+        techStack: ["Vue", "Sass"],
+        cardImg: "/assets/content/projects/qrme.png",
+        url: 'https://qrmeapp.vercel.app/'
+    },
+    {
+        id: uuid(),
         nameProject: 'GenMax Academy',
         description: 'Landing page developed for GenMax Academy, an academy focused on enhancing facial aesthetics and boosting personal image, founded by well-known TikTok creators. The website presents the brand with a modern, dynamic design aimed at delivering strong visual impact and real results.',
         stack:[React, CSS, Bootstrap],
         techStack: ["React", "CSS", "Framer Motion", "Bootstrap"],
         cardImg: '/assets/content/projects/genmax.png',
         url: "https://www.genmaxacademy.com/"
-    },
-    {
-        id: uuid(),
-        nameProject: 'Therapist Sarah - Website',
-        description: 'This is the website of a psychologist named Sarah. On this page, you can find and schedule monthly plans and sessions. Additionally, you can read reviews and her bio.',
-        stack:[HTML, CSS, JS],
-        techStack: ["HTML", "CSS", "JavaScript"],
-        cardImg: '/assets/content/projects/sarah.png',
-        url: 'https://sarah-therapist.netlify.app/'
     },
     {
         id: uuid(),
@@ -111,12 +115,27 @@ export const stackLanguages = [
     },
     {
         id: uuid(),
+        nameTechnology: "Motion",
+        icon: MOTION
+    },
+    {
+        id: uuid(),
         nameTechnology: "SQL",
         icon: SQLICON
     },
     {
         id: uuid(),
-        nameTechnology: "Motion",
-        icon: MOTION
-    }
+        nameTechnology: "WordPress",
+        icon: WORDPRESS
+    },
+    {
+        id: uuid(),
+        nameTechnology: "Vue",
+        icon: VUEICON
+    },
+    {
+        id: uuid(),
+        nameTechnology: 'TypeScript',
+        icon: TSICON
+    },
 ];
