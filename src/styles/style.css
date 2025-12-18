@@ -256,7 +256,7 @@ main{max-width: 1300px; margin: 0 auto;}
             border: 0;
             border: 1px solid var(--border1);
             border-radius: 10px;
-            color: var(--textcolor);
+            color: var(--color2);
         }
         textarea{
             width: 100%;
