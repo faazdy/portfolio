@@ -125,11 +125,6 @@ export const stackLanguages = [
     },
     {
         id: uuid(),
-        nameTechnology: "WordPress",
-        icon: WORDPRESS
-    },
-    {
-        id: uuid(),
         nameTechnology: "Vue",
         icon: VUEICON
     },

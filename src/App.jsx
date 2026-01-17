@@ -28,6 +28,9 @@ function App() {
             setStatus("Something went wrong");
         }
     };
+
+    //year dynamic
+    const year = new Date();
     return (
         <>
             <Navbar />
@@ -138,7 +141,7 @@ function App() {
             <footer>
                 <div className="text">
                     <p>
-                        Leonardo - 2025
+                        Leonardo - {year.getFullYear()}
                     </p>
                 </div>
                 <div className="tags">
