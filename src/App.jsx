@@ -41,7 +41,7 @@ function App() {
                     transition={{ duration: 0.8, ease: "easeOut" }}>
                     <h4>Hello!</h4>
                     <h1>I'm <span>Leonardo</span></h1>
-                    <h3>Systems engineer & Frontend Developer</h3>
+                    <h3>Systems engineer & Web Developer</h3>
                     <p>
                         "Every is posible."
                     </p>
