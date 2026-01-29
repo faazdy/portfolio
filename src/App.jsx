@@ -65,7 +65,10 @@ function App() {
                         Currently, I’m learning Vue.js to strengthen my front-end skills and build modern, efficient web applications. I focus on crafting responsive designs with great attention to UI/UX and performance.
                         I’m a responsible, adaptable person who enjoys continuous learning and bringing ideas to life through code.
                     </p>
-                    <a href="#contact" className='btn'>Let's Connect</a>
+                    <a href="/HVLeonardoRengifoRamos-TI.pdf" className='btn' download="HVLeonardoRengifoRamos.pdf">
+                        <img src="/assets/icons/downloadcvico.png" alt="" />
+                        Download resume
+                    </a>
                 </section>
                 <section className="projects" id="projects">
                     <h2>Featured Projects</h2>

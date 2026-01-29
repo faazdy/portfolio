@@ -125,6 +125,16 @@ main{max-width: 1300px; margin: 0 auto;}
         color: white;
         text-decoration: none;
         font-weight: 500;
+        transition: .3s ease;
+        img{
+            width: 25px;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        &:hover{
+            background-color: #a1031f;
+        }
     }
 }
 @media screen and (max-width: 900px) {
