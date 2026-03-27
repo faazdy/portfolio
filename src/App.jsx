@@ -1,159 +1,201 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { motion } from "framer-motion"
 import { projects } from './data/data'
 import { stackLanguages } from './data/data'
-import { motion } from "framer-motion";
-
 import Navbar from './components/Navbar'
 import ProjectCard from './components/ProjectCard'
-
+import './styles/style.css'
 
 function App() {
     const [status, setStatus] = useState('')
+    const year = new Date().getFullYear()
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const data = new FormData(form);
+        e.preventDefault()
+        const form = e.target
+        const data = new FormData(form)
         const res = await fetch("https://formspree.io/f/mjkalzry", {
             method: "POST",
             body: data,
             headers: { Accept: "application/json" },
-        });
-
+        })
         if (res.ok) {
-            setStatus("Message sent!");
-            form.reset();
+            setStatus("Message sent!")
+            form.reset()
         } else {
-            setStatus("Something went wrong");
+            setStatus("Something went wrong")
         }
-    };
+    }
 
-    //year dynamic
-    const year = new Date();
     return (
         <>
+            {/* ── NAV: pasa el control del dark mode a Navbar ── */}
             <Navbar />
+
             <main>
-                <motion.section className="hero-intro" id="hero"
-                    initial={{ opacity: 0, y: 40 }}
+
+                {/* ── HERO ── */}
+                <motion.section
+                    id="hero"
+                    initial={{ opacity: 0, y: 32 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}>
-                    <h4>Hello!</h4>
-                    <h1>I'm <span>Leonardo</span></h1>
-                    <h3>Systems engineer & Web Developer</h3>
-                    <p>
-                        "Every is posible."
-                    </p>
-                    <div className="btns">
-                        <a href="#projects">View projects</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <div className="social">
-                        <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/icons/linkedin.png" alt="linkedIn" />
+                    transition={{ duration: 0.75, ease: "easeOut" }}
+                >
+                    <p className="hero-eyebrow">Bogotá, Colombia</p>
+
+                    <h1 className="hero-name">
+                        I'm <span>Leonardo</span>
+                    </h1>
+
+                    <p className="hero-role">Systems Engineer &amp; Web Developer</p>
+
+                    <p className="hero-quote">"Everything is possible."</p>
+
+                    <div className="hero-actions">
+                        <a href="#projects" className="btn-primary">
+                            View projects <span>↓</span>
                         </a>
-                        <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/icons/icons8-github-480.png" alt="github" />
+                        <a href="#contact" className="btn-ghost">Contact me</a>
+                    </div>
+
+                    <div className="hero-social">
+                        <a
+                            href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            <img src="assets/icons/linkedin.png" alt="LinkedIn" />
+                            LinkedIn
+                        </a>
+                        <a
+                            href="https://github.com/faazdy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            <img src="assets/icons/icons8-github-480.png" alt="GitHub" />
+                            GitHub
                         </a>
                     </div>
                 </motion.section>
-                <section className="about-me" id='about-me'>
-                    <h2>About me</h2>
-                    <p>
-                        I’m a Systems Engineering student and front-end web developer passionate about creating clean, user-friendly interfaces. I work with HTML5, CSS3, JavaScript, and Sass, using frameworks like Bootstrap and React.
-                        Currently, I’m learning Vue.js to strengthen my front-end skills and build modern, efficient web applications. I focus on crafting responsive designs with great attention to UI/UX and performance.
-                        I’m a responsible, adaptable person who enjoys continuous learning and bringing ideas to life through code.
-                    </p>
-                    <a href="/assets/content/HVLeonardoRengifoRamos-TI.pdf" className='btn' download="HVLeonardoRengifoRamos-TI.pdf">
-                        <img src="/assets/icons/downloadcvico.png" alt="" />
-                        Download resume
-                    </a>
-                </section>
-                <section className="projects" id="projects">
-                    <h2>Featured Projects</h2>
-                    <article className="pj-container">
-                        {projects.map(project => {
-                            return (
-                                <ProjectCard {...project} key={project.id} />
-                            )
-                        })}
-                    </article>
-                </section>
-                <section className="stack" id="stack">
-                    <h2>Skills</h2>
-                    <div className="stack-container">
-                        {
-                            stackLanguages.map(icon => {
-                                return (
-                                    <div className="stack-card" key={icon.id}>
-                                        <img src={icon.icon} alt="stack" />
-                                        <span>{icon.nameTechnology}</span>
-                                    </div>
-                                )
-                            })
-                        }
+
+                {/* ── ABOUT ME ── */}
+                <section id="about-me">
+                    <div className="about-content">
+                        <h2 className="section-label">About me</h2>
+                        <p className="about-text">
+                            I'm a Systems Engineering student and front-end web developer
+                            passionate about creating clean, user-friendly interfaces. I work
+                            with HTML5, CSS3, JavaScript, and Sass, using frameworks like
+                            Bootstrap and React. Currently learning Vue.js to strengthen my
+                            front-end skills and build modern, efficient web applications.
+                        </p>
+                        <a
+                            href="/assets/content/HVLeonardoRengifoRamos-TI.pdf"
+                            className="btn-download"
+                            download="HVLeonardoRengifoRamos-TI.pdf"
+                        >
+                            <img src="/assets/icons/downloadcvico.png" alt="" />
+                            Download resume
+                        </a>
+                    </div>
+
+                    <div className="about-aside">
+                        <div className="about-stat">
+                            <div className="about-stat-num">3+</div>
+                            <div className="about-stat-label">Years learning & building</div>
+                        </div>
+                        <div className="about-stat">
+                            <div className="about-stat-num">∞</div>
+                            <div className="about-stat-label">Curiosity</div>
+                        </div>
                     </div>
                 </section>
-                <section className="contact" id="contact">
-                    <h2>Contact me</h2>
-                    <article className="c-container">
-                        <p>
-                            You can contact me via email or LinkedIn. Just press the icons or use the form below.
-                        </p>
 
-                        <form
-                            onSubmit={handleSubmit}
+                {/* ── PROJECTS ── */}
+                <section id="projects">
+                    <h2 className="section-label">Featured projects</h2>
+                    <div className="projects-grid">
+                        {projects.map(project => (
+                            <ProjectCard {...project} key={project.id} />
+                        ))}
+                    </div>
+                </section>
+
+                {/* ── SKILLS / STACK ── */}
+                <section id="stack">
+                    <p className="section-label">Skills &amp; stack</p>
+                    <div className="stack-grid">
+                        {stackLanguages.map(icon => (
+                            <div className="stack-card" key={icon.id}>
+                                <img src={icon.icon} alt={icon.nameTechnology} />
+                                <span>{icon.nameTechnology}</span>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* ── CONTACT ── */}
+                <section id="contact">
+                    <h2 className="contact-big">
+                        Let's build<br />something <em>great</em>
+                    </h2>
+                    <p className="contact-sub">
+                        Available for freelance projects and collaborations.
+                        Tell me what you have in mind.
+                    </p>
+
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <input type="email" name="email" placeholder="Your email" required />
+                        <input type="text"  name="name"  placeholder="Your name"  required />
+                        <textarea name="message" placeholder="Message" required />
+                        <button type="submit">Send message ↗</button>
+                    </form>
+
+                    {status && (
+                        <p className={`form-status${status === "Something went wrong" ? " bad" : ""}`}>
+                            {status}
+                        </p>
+                    )}
+
+                    <hr className="contact-divider" />
+                    <p className="contact-find-label">FIND ME ON</p>
+
+                    <div className="contact-links">
+                        <a href="mailto:leorengifor.dev@gmail.com" className="contact-link">
+                            <img src="assets/icons/email.png" alt="" />
+                            Email
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-link"
                         >
-                            <input type="email" name="email" placeholder="Your email" required />
-                            <input type="text" name="name" placeholder="Name" required />
-                            <textarea name="message" placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                        {status && <p className={status === "Something went wrong" ? "form-status bad" : 'form-status'}>{status}</p>}
-                        <hr />
-                        <h3>Find me on</h3>
-                        <div className="tags">
-                            <a href="mailto:leorengifor.dev@gmail.com" className="contact-card">
-                                <img src="assets/icons/email.png" alt="icon-contact" />
-                                <span>Email</span>
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="contact-card"
-                            >
-                                <img src="assets/icons/linkedin.png" alt="icon-contact" />
-                                <span>LinkedIn</span>
-                            </a>
-                            <a
-                                href="https://github.com/faazdy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="contact-card"
-                            >
-                                <img src="assets/icons/icons8-github-480.png" alt="icon-contact" />
-                                <span>GitHub</span>
-                            </a>
-                        </div>
-                    </article>
+                            <img src="assets/icons/linkedin.png" alt="" />
+                            LinkedIn
+                        </a>
+                        <a
+                            href="https://github.com/faazdy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-link"
+                        >
+                            <img src="assets/icons/icons8-github-480.png" alt="" />
+                            GitHub
+                        </a>
+                    </div>
                 </section>
 
             </main>
+
+            {/* ── FOOTER ── */}
             <footer>
-                <div className="text">
-                    <p>
-                        Leonardo - {year.getFullYear()}
-                    </p>
-                </div>
-                <div className="tags">
-                    <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
+                <span>Leonardo — {year}</span>
+                <div className="footer-links">
+                    <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </footer>
         </>
