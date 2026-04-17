@@ -95,6 +95,11 @@ export const stackLanguages = [
     },
     {
         id: uuid(),
+        nameTechnology: "TypeScript",
+        icon: TSICON
+    },
+    {
+        id: uuid(),
         nameTechnology: "Sass",
         icon: SASSICON
     },
