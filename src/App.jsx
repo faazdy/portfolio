@@ -92,9 +92,9 @@ function App() {
                             front-end skills and build modern, efficient web applications.
                         </p>
                         <a
-                            href="/assets/content/HVLeonardoRengifoRamos-TI.pdf"
+                            href="/assets/content/Leonardo-Rengifo-Ramos-CV-2026.pdf"
                             className="btn-download"
-                            download="HVLeonardoRengifoRamos-TI.pdf"
+                            download="Leonardo-Rengifo-Ramos-CV-2026.pdf"
                         >
                             <img src="/assets/icons/downloadcvico.png" alt="" />
                             Download resume
