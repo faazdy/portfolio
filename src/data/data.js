@@ -9,6 +9,7 @@ import React from "/assets/icons/reactCARD.svg"
 import Sass from "/assets/icons/sassCARD.svg"
 import Bootstrap from "/assets/icons/boostrapCARD.png"
 import Vue from "/assets/icons/vueCARD.svg"
+import JavaScript from "/assets/icons/jsCARD.svg"
 
 //STACK ICONS LOGOS
 import HTMLICON from "/assets/icons/html-5-logo-svgrepo-com.svg"
@@ -68,12 +69,12 @@ export const projects = [
     },
     {
         id: uuid(),
-        nameProject: 'GG Nexus - Gaming Center',
-        description: "GG Nexus is a modern and responsive landing page for a gaming center. Built with React and Bootstrap, it showcases the center's services, customer reviews, and reservation form. The design includes animated sections, a service pricing grid, and a dynamic carousel for user experiences. GG Nexus is fully deployable and mobile-friendly, created to attract gamers and simplify booking through a clean and interactive interface.",
-        stack:[React, Bootstrap, Sass],
-        techStack: ["React", "Bootstrap", "Sass"],
-        cardImg: '/assets/content/projects/ggnexus.png',
-        url: "https://ggnexusgaming.netlify.app/"
+        nameProject: 'UInspired',
+        description: "Inspired UI projects ",
+        stack:[Vue, JavaScript],
+        techStack: ["Vue", "JavaScript"],
+        cardImg: '/assets/content/projects/uinspired.png',
+        url: "https://uinspirate.vercel.app/"
     }
 ];
 
