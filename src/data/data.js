@@ -10,6 +10,7 @@ import Sass from "/assets/icons/sassCARD.svg"
 import Bootstrap from "/assets/icons/boostrapCARD.png"
 import Vue from "/assets/icons/vueCARD.svg"
 import JavaScript from "/assets/icons/jsCARD.svg"
+import HTML from "/assets/icons/htmlCARD.svg"
 
 //STACK ICONS LOGOS
 import HTMLICON from "/assets/icons/html-5-logo-svgrepo-com.svg"
@@ -42,12 +43,30 @@ export const projects = [
     },
     {
         id: uuid(),
-        nameProject: 'QRMe App | QR Generator',
+        nameProject: 'QRMe - QR Generator App',
         description: 'A lightweight and fast QR code generator built with Vue and Sass. Users can create custom QR codes in seconds, preview them instantly, and download them in high-quality PNG format through a clean and responsive UI.',
         stack:[Vue, Sass],
         techStack: ["Vue", "Sass"],
         cardImg: "/assets/content/projects/qrme.png",
         url: 'https://qrmeapp.vercel.app/'
+    },
+    {
+        id: uuid(),
+        nameProject: 'UInspired',
+        description: "Inspired UI projects ",
+        stack:[Vue, JavaScript],
+        techStack: ["Vue", "JavaScript"],
+        cardImg: '/assets/content/projects/uinspired.png',
+        url: "https://uinspirate.vercel.app/"
+    },
+    {
+        id: uuid(),
+        nameProject: 'KapleCSS - CSS Minimal Framework',
+        description: 'KapleCSS is a minimal premium CSS framework designed to help developers create beautiful, consistent websites with ease. Built on a foundation of design tokens, it provides a single source of truth for colors, typography, and spacing, keeping every project cohesive from day one.',
+        stack:[Sass, JavaScript, HTML],
+        techStack: ["Sass", "JavaScript"],
+        cardImg: '/assets/content/projects/kaplecss.png',
+        url: "https://kaplecss.vercel.app/"
     },
     {
         id: uuid(),
@@ -67,15 +86,6 @@ export const projects = [
         cardImg: '/assets/content/projects/uikomponents.png',
         url: "https://uikomponents.vercel.app/"
     },
-    {
-        id: uuid(),
-        nameProject: 'UInspired',
-        description: "Inspired UI projects ",
-        stack:[Vue, JavaScript],
-        techStack: ["Vue", "JavaScript"],
-        cardImg: '/assets/content/projects/uinspired.png',
-        url: "https://uinspirate.vercel.app/"
-    }
 ];
 
 export const stackLanguages = [
