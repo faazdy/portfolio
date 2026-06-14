@@ -53,9 +53,9 @@ export const projects = [
     {
         id: uuid(),
         nameProject: 'UInspired',
-        description: "Inspired UI projects ",
-        stack:[Vue, JavaScript],
-        techStack: ["Vue", "JavaScript"],
+        description: "A curated collection of modular UI components, interactive interfaces, and design explorations inspired by modern landing pages.",
+        stack:[Vue, JavaScript, CSS],
+        techStack: ["Vue", "CSS", "JavaScript"],
         cardImg: '/assets/content/projects/uinspired.png',
         url: "https://uinspirate.vercel.app/"
     },
