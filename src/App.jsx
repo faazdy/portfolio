@@ -41,7 +41,7 @@ function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.75, ease: "easeOut" }}
                 >
-                    <p className="hero-eyebrow">Bogotá, Colombia</p>
+                    <p className="hero-eyebrow">Hello!</p>
 
                     <h1 className="hero-name">
                         I'm <span>Leonardo</span>
