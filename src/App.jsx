@@ -85,11 +85,7 @@ function App() {
                     <div className="about-content">
                         <h2 className="section-label">About me</h2>
                         <p className="about-text">
-                            I'm a Systems Engineering student and front-end web developer
-                            passionate about creating clean, user-friendly interfaces. I work
-                            with HTML5, CSS3, JavaScript, and Sass, using frameworks like
-                            Bootstrap and React. Currently learning Vue.js to strengthen my
-                            front-end skills and build modern, efficient web applications.
+                            I am a final-year Systems Engineering student and a Full-Stack Web Developer. I bridge the gap between rigorous software architecture and high-performance, responsive user interfaces. With a strong focus on clean code and exceptional UI/UX performance, I build production-ready web applications that balance speed, scalability, and accessibility.
                         </p>
                         <a
                             href="/assets/content/Leonardo-Rengifo-Ramos-CV-2026.pdf"
@@ -107,8 +103,8 @@ function App() {
                             <div className="about-stat-label">Years learning & building</div>
                         </div>
                         <div className="about-stat">
-                            <div className="about-stat-num">∞</div>
-                            <div className="about-stat-label">Curiosity</div>
+                            <div className="about-stat-num">8+</div>
+                            <div className="about-stat-label">Happy clients</div>
                         </div>
                     </div>
                 </section>
