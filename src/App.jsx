@@ -103,8 +103,8 @@ function App() {
                             <div className="about-stat-label">Years learning & building</div>
                         </div>
                         <div className="about-stat">
-                            <div className="about-stat-num">8+</div>
-                            <div className="about-stat-label">Happy clients</div>
+                            <div className="about-stat-num">2+</div>
+                            <div className="about-stat-label">Years of experience as freelance web developer</div>
                         </div>
                     </div>
                 </section>
