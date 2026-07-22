@@ -78,6 +78,7 @@ function App() {
                             GitHub
                         </a>
                     </div>
+                                      
                 </motion.section>
 
                 {/* ── ABOUT ME ── */}
@@ -105,6 +106,14 @@ function App() {
                         <div className="about-stat">
                             <div className="about-stat-num">2+</div>
                             <div className="about-stat-label">Years of experience as freelance web developer</div>
+                        </div>
+                        <br />
+                        <div className="testimonial">
+                            <div className="testimonial-avatar">T</div>
+                            <div className="testimonial-text">
+                                &quot;Trabajo impecable para mi proyecto GenMax.&quot;
+                            <span className="testimonial-author">Tarc — @tomasarangooo - TikTok Content Creator</span>
+                            </div>
                         </div>
                     </div>
                 </section>
