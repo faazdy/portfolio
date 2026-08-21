@@ -144,7 +144,7 @@ function App() {
                 {/* ── CONTACT ── */}
                 <section id="contact">
                     <h2 className="contact-big">
-                        Let's build<br />something <em>great</em>
+                        Let's build<br />something <em>great!</em>
                     </h2>
                     <p className="contact-sub">
                         Available for freelance projects and collaborations.

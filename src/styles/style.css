@@ -131,14 +131,12 @@ section {
   font-family: var(--font-serif);
   font-size: clamp(52px, 9vw, 84px);
   line-height: 1.05;
-  letter-spacing: -1px;
+  letter-spacing: -5px;
   margin-bottom: 12px;
 }
 
 .hero-name span {
-  font-style: italic;
   color: var(--accent);
-  font-weight: 400;
 }
 
 .hero-role {
@@ -424,7 +422,6 @@ section {
 }
 
 .contact-big em {
-  font-style: italic;
   color: var(--accent);
 }
 
