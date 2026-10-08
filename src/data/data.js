@@ -88,6 +88,31 @@ export const projects = [
     },
 ];
 
+export const experiences = [
+    {
+        id: uuid(),
+        period: "Actualmente",
+        role: "Practicante de Ingeniería de Sistemas",
+        company: "Capital Salud EPS-S · Dirección de Estrategia y Planeación",
+        current: true,
+        desc: "Diseñé y desarrollé SABIA, un sistema interno que centraliza la documentación de Almera SGI en una web consultable y un asistente de IA, eliminando grabaciones de +1h. Incluye skills que automatizan tareas de la coordinación de calidad —presentaciones institucionales y diagramas de flujo— ahorrando hasta un día completo de trabajo por tarea, e informes instantáneos con KPIs validadas por dirección, sin necesidad de saber Power BI. También parametricé el SGI de Almera, desarrollé GuIAs (bases de conocimiento para agentes IA) y optimicé tableros Power BI + SQL Server para la toma de decisiones financieras en salud.",
+        tags: ["IA aplicada", "Automatización", "Claude Skills", "SGI Almera", "Power BI & SQL Server", "Reportes & KPIs"],
+    },
+    {
+        id: uuid(),
+        period: "2023 — 2026",
+        role: "Freelance Full-Stack Developer",
+        company: "Independiente",
+        current: false,
+        desc: "Diseño y desarrollo de aplicaciones y sitios web para creadores y pequeños negocios, desde la interfaz hasta el despliegue.",
+        tags: ["React", "Vue", "Node.js"],
+        testimonial: {
+            text: "Trabajo impecable para mi proyecto GenMax.",
+            author: "Tarc — @tomasarangooo - TikTok Content Creator",
+        },
+    },
+];
+
 export const stackLanguages = [
     {
         id: uuid(),

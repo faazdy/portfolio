@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { motion } from "framer-motion"
 import { projects } from './data/data'
 import { stackLanguages } from './data/data'
+import { experiences } from './data/data'
 import Navbar from './components/Navbar'
 import ProjectCard from './components/ProjectCard'
 import './styles/style.css'
 
 function App() {
     const [status, setStatus] = useState('')
+    const [openExp, setOpenExp] = useState(0)
     const year = new Date().getFullYear()
 
     const handleSubmit = async (e) => {
@@ -99,21 +101,56 @@ function App() {
                     </div>
 
                     <div className="about-aside">
-                        <div className="about-stat">
-                            <div className="about-stat-num">3+</div>
-                            <div className="about-stat-label">Years learning & building</div>
-                        </div>
-                        <div className="about-stat">
-                            <div className="about-stat-num">2+</div>
-                            <div className="about-stat-label">Years of experience as freelance web developer</div>
-                        </div>
-                        <br />
-                        <div className="testimonial">
-                            <div className="testimonial-avatar">T</div>
-                            <div className="testimonial-text">
-                                &quot;Trabajo impecable para mi proyecto GenMax.&quot;
-                            <span className="testimonial-author">Tarc — @tomasarangooo - TikTok Content Creator</span>
-                            </div>
+                        <h2 className="section-label">Experience</h2>
+
+                        <div className="exp-timeline">
+                            {experiences.map((job, i) => {
+                                const open = openExp === i
+                                return (
+                                    <div className="exp-item" key={job.id}>
+                                        <span className={`exp-dot${open || job.current ? ' is-active' : ''}`} />
+                                        <div className={`exp-card${open ? ' is-open' : ''}`}>
+                                            <button
+                                                type="button"
+                                                className="exp-toggle"
+                                                aria-expanded={open}
+                                                onClick={() => setOpenExp(open ? -1 : i)}
+                                            >
+                                                <span className="exp-toggle-text">
+                                                    <span className={`exp-period${job.current ? ' is-current' : ''}`}>
+                                                        {job.period}
+                                                    </span>
+                                                    <span className="exp-role">
+                                                        {job.role} <span className="exp-company">· {job.company}</span>
+                                                    </span>
+                                                </span>
+                                                <span className="exp-icon">{open ? '–' : '+'}</span>
+                                            </button>
+
+                                            {open && (
+                                                <div className="exp-details">
+                                                    <p className="exp-desc">{job.desc}</p>
+                                                    <div className="exp-tags">
+                                                        {job.tags.map(tag => (
+                                                            <span className="exp-tag" key={tag}>{tag}</span>
+                                                        ))}
+                                                    </div>
+
+                                                    {job.testimonial && (
+                                                        <div className="testimonial exp-testimonial">
+                                                            <div className="testimonial-avatar">T</div>
+                                                            <div className="testimonial-text">
+                                                                &quot;{job.testimonial.text}&quot;
+                                                                <span className="testimonial-author">{job.testimonial.author}</span>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </section>
