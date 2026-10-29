@@ -1,246 +1,76 @@
-import React, { useState } from 'react'
-import { motion } from "framer-motion"
-import { projects } from './data/data'
-import { stackLanguages } from './data/data'
-import { experiences } from './data/data'
+import { useEffect, useState } from 'react'
+import { PAGES } from './data/site'
+import { TRANSLATIONS } from './data/i18n'
 import Navbar from './components/Navbar'
-import ProjectCard from './components/ProjectCard'
+import Home from './pages/Home'
+import Info from './pages/Info'
+import Work from './pages/Work'
+import Contact from './pages/Contact'
+import { ProjectDetail } from './components/ProjectCard'
 import './styles/style.css'
 
-function App() {
-    const [status, setStatus] = useState('')
-    const [openExp, setOpenExp] = useState(0)
-    const year = new Date().getFullYear()
+const PAGE_COMPONENTS = { home: Home, info: Info, work: Work, contact: Contact }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const form = e.target
-        const data = new FormData(form)
-        const res = await fetch("https://formspree.io/f/mjkalzry", {
-            method: "POST",
-            body: data,
-            headers: { Accept: "application/json" },
-        })
-        if (res.ok) {
-            setStatus("Message sent!")
-            form.reset()
-        } else {
-            setStatus("Something went wrong")
-        }
+// The URL hash is the route: "#work" -> "work", "#work/pingym" -> "work/pingym".
+// Anything unknown falls back to the home page.
+function getRouteFromUrl() {
+    const route = window.location.hash.slice(1)
+    const page = route.split('/')[0]
+    return PAGES.includes(page) ? route : 'home'
+}
+
+// Saved choice first, then the browser language
+function getInitialLanguage() {
+    try {
+        const saved = localStorage.getItem('lang')
+        if (saved === 'en' || saved === 'es') return saved
+    } catch { /* storage unavailable */ }
+
+    return navigator.language?.startsWith('es') ? 'es' : 'en'
+}
+
+function App() {
+    const [route, setRoute] = useState(getRouteFromUrl)
+    const [lang, setLang] = useState(getInitialLanguage)
+
+    // `t` holds every text of the page in the current language
+    const t = TRANSLATIONS[lang]
+
+    // "work/pingym" -> page "work" + project "pingym" (opens the project detail)
+    const [page, projectSlug] = route.split('/')
+    const CurrentPage = projectSlug ? ProjectDetail : PAGE_COMPONENTS[page]
+
+    // Keep the page in sync with the browser back/forward buttons
+    useEffect(() => {
+        const handleHashChange = () => setRoute(getRouteFromUrl())
+        window.addEventListener('hashchange', handleHashChange)
+        return () => window.removeEventListener('hashchange', handleHashChange)
+    }, [])
+
+    useEffect(() => {
+        document.documentElement.lang = lang
+        try { localStorage.setItem('lang', lang) } catch { /* storage unavailable */ }
+    }, [lang])
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [route])
+
+    // Returns a click handler, e.g. onClick={goTo('work')} or onClick={goTo('work/pingym')}
+    const goTo = (nextRoute) => (event) => {
+        event?.preventDefault()
+        if (nextRoute === route) return
+
+        window.location.hash = nextRoute === 'home' ? '' : nextRoute
+        setRoute(nextRoute)
     }
 
     return (
-        <>
-            {/* ── NAV: pasa el control del dark mode a Navbar ── */}
-            <Navbar />
-
-            <main>
-
-                {/* ── HERO ── */}
-                <motion.section
-                    id="hero"
-                    initial={{ opacity: 0, y: 32 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.75, ease: "easeOut" }}
-                >
-                    <p className="hero-eyebrow">Hello!</p>
-
-                    <h1 className="hero-name">
-                        I'm <span>Leonardo</span>
-                    </h1>
-
-                    <p className="hero-role">Systems Engineer &amp; Web Developer</p>
-
-                    <p className="hero-quote">"Everything is possible."</p>
-
-                    <div className="hero-actions">
-                        <a href="#projects" className="btn-primary">
-                            View projects <span>↓</span>
-                        </a>
-                        <a href="#contact" className="btn-ghost">Contact me</a>
-                    </div>
-
-                    <div className="hero-social">
-                        <a
-                            href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="social-link"
-                        >
-                            <img src="assets/icons/linkedin.png" alt="LinkedIn" />
-                            LinkedIn
-                        </a>
-                        <a
-                            href="https://github.com/faazdy"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="social-link"
-                        >
-                            <img src="assets/icons/icons8-github-480.png" alt="GitHub" />
-                            GitHub
-                        </a>
-                    </div>
-                                      
-                </motion.section>
-
-                {/* ── ABOUT ME ── */}
-                <section id="about-me">
-                    <div className="about-content">
-                        <h2 className="section-label">About me</h2>
-                        <p className="about-text">
-                            I am a final-year Systems Engineering student and a Full-Stack Web Developer. I bridge the gap between rigorous software architecture and high-performance, responsive user interfaces. With a strong focus on clean code and exceptional UI/UX performance, I build production-ready web applications that balance speed, scalability, and accessibility.
-                        </p>
-                        <a
-                            href="/assets/content/Leonardo-Rengifo-Ramos-CV-2026.pdf"
-                            className="btn-download"
-                            download="Leonardo-Rengifo-Ramos-CV-2026.pdf"
-                        >
-                            <img src="/assets/icons/downloadcvico.png" alt="" />
-                            Download resume
-                        </a>
-                    </div>
-
-                    <div className="about-aside">
-                        <h2 className="section-label">Experience</h2>
-
-                        <div className="exp-timeline">
-                            {experiences.map((job, i) => {
-                                const open = openExp === i
-                                return (
-                                    <div className="exp-item" key={job.id}>
-                                        <span className={`exp-dot${open || job.current ? ' is-active' : ''}`} />
-                                        <div className={`exp-card${open ? ' is-open' : ''}`}>
-                                            <button
-                                                type="button"
-                                                className="exp-toggle"
-                                                aria-expanded={open}
-                                                onClick={() => setOpenExp(open ? -1 : i)}
-                                            >
-                                                <span className="exp-toggle-text">
-                                                    <span className={`exp-period${job.current ? ' is-current' : ''}`}>
-                                                        {job.period}
-                                                    </span>
-                                                    <span className="exp-role">
-                                                        {job.role} <span className="exp-company">· {job.company}</span>
-                                                    </span>
-                                                </span>
-                                                <span className="exp-icon">{open ? '–' : '+'}</span>
-                                            </button>
-
-                                            {open && (
-                                                <div className="exp-details">
-                                                    <p className="exp-desc">{job.desc}</p>
-                                                    <div className="exp-tags">
-                                                        {job.tags.map(tag => (
-                                                            <span className="exp-tag" key={tag}>{tag}</span>
-                                                        ))}
-                                                    </div>
-
-                                                    {job.testimonial && (
-                                                        <div className="testimonial exp-testimonial">
-                                                            <div className="testimonial-avatar">T</div>
-                                                            <div className="testimonial-text">
-                                                                &quot;{job.testimonial.text}&quot;
-                                                                <span className="testimonial-author">{job.testimonial.author}</span>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── PROJECTS ── */}
-                <section id="projects">
-                    <h2 className="section-label">Featured projects</h2>
-                    <div className="projects-grid">
-                        {projects.map(project => (
-                            <ProjectCard {...project} key={project.id} />
-                        ))}
-                    </div>
-                </section>
-
-                {/* ── SKILLS / STACK ── */}
-                <section id="stack">
-                    <p className="section-label">Skills &amp; stack</p>
-                    <div className="stack-grid">
-                        {stackLanguages.map(icon => (
-                            <div className="stack-card" key={icon.id}>
-                                <img src={icon.icon} alt={icon.nameTechnology} />
-                                <span>{icon.nameTechnology}</span>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-
-                {/* ── CONTACT ── */}
-                <section id="contact">
-                    <h2 className="contact-big">
-                        Let's build<br />something <em>great!</em>
-                    </h2>
-                    <p className="contact-sub">
-                        Available for freelance projects and collaborations.
-                        Tell me what you have in mind.
-                    </p>
-
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <input type="email" name="email" placeholder="Your email" required />
-                        <input type="text"  name="name"  placeholder="Your name"  required />
-                        <textarea name="message" placeholder="Message" required />
-                        <button type="submit">Send message ↗</button>
-                    </form>
-
-                    {status && (
-                        <p className={`form-status${status === "Something went wrong" ? " bad" : ""}`}>
-                            {status}
-                        </p>
-                    )}
-
-                    <hr className="contact-divider" />
-                    <p className="contact-find-label">FIND ME ON</p>
-
-                    <div className="contact-links">
-                        <a href="mailto:leorengifor.dev@gmail.com" className="contact-link">
-                            <img src="assets/icons/email.png" alt="" />
-                            Email
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="contact-link"
-                        >
-                            <img src="assets/icons/linkedin.png" alt="" />
-                            LinkedIn
-                        </a>
-                        <a
-                            href="https://github.com/faazdy"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="contact-link"
-                        >
-                            <img src="assets/icons/icons8-github-480.png" alt="" />
-                            GitHub
-                        </a>
-                    </div>
-                </section>
-
-            </main>
-
-            {/* ── FOOTER ── */}
-            <footer>
-                <span>Leonardo — {year}</span>
-                <div className="footer-links">
-                    <a href="https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/faazdy" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>
-            </footer>
-        </>
+        <div className="shell">
+            <Navbar page={page} lang={lang} setLang={setLang} t={t} goTo={goTo} />
+            {/* key: remount on every route change so the scroll resets and the fade-in replays */}
+            <CurrentPage key={route} t={t} goTo={goTo} slug={projectSlug} />
+        </div>
     )
 }
 

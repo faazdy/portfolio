@@ -1,0 +1,148 @@
+/* ── Left column: photo ── */
+
+.photo-wrap { display: flex; flex-direction: column; gap: 12px; }
+.photo-wrap--left { width: min(100%, 253px); }
+.photo--left { width: 100%; aspect-ratio: 253 / 336; }
+.photo-wrap--left .small { align-self: flex-end; }
+
+/* ── Middle column: resume, quote, stack ── */
+
+.resume {
+    align-self: flex-start;
+    margin-top: 28px;
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 22px;
+    font-size: var(--text-sm);
+    transition: background .15s;
+}
+.resume:hover { background: var(--accent); color: #fff; }
+
+.quote {
+    margin: 48px 0 0;
+    padding-left: 18px;
+    border-left: 1px solid var(--line-strong);
+    font-size: var(--text-lg);
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.quote cite { font-style: normal; color: var(--muted); font-size: 12px; }
+
+.stack-wrap { padding-top: 120px; padding-bottom: 30px; }
+.stack {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.stack .label { font-size: 12px; }
+.stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px 28px;
+}
+.stack-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: .55;
+    transition: filter .2s, opacity .2s, transform .2s;
+}
+.stack-icon:hover { filter: none; opacity: 1; transform: translateY(-2px); }
+
+/* ── Middle column: achievements + certifications ── */
+
+.info-section { display: flex; flex-direction: column; gap: 28px; padding-top: 96px; }
+.info-section .label { font-size: 12px; }
+
+.exp-job { display: flex; flex-direction: column; gap: 16px; }
+.exp-job + .exp-job { padding-top: 20px; }
+
+.exp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+}
+.exp-title { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-xl); letter-spacing: -0.02em; }
+.exp-title .muted { font-size: var(--text-base); }
+.exp-period { font-size: var(--text-sm); white-space: nowrap; }
+
+.exp-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.exp-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    text-wrap: pretty;
+}
+.exp-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 9px;
+    color: var(--accent);
+}
+
+.cert {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+.cert-body { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-md); letter-spacing: -0.015em; }
+.cert-body .muted { font-size: var(--text-sm); }
+.cert > .muted { font-size: var(--text-sm); }
+
+/* ── Right column: stats + timeline ── */
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: var(--text-lg);
+    letter-spacing: -0.02em;
+}
+.stat .muted { font-size: var(--text-md); }
+
+.timeline-label {
+    display: block;
+    text-align: right;
+    font-size: var(--text-md);
+    padding: 36px 0 10px;
+    border-bottom: 1px solid var(--line);
+}
+
+.tl-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 22px 0 10px;
+    border-bottom: 1px solid var(--line);
+}
+.tl-year { font-size: var(--text-md); white-space: nowrap; }
+.tl-body { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 2px; font-size: var(--text-lg); letter-spacing: -0.02em; }
+.tl-body .muted { font-size: var(--text-base); }
