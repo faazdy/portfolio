@@ -1,4 +1,5 @@
-import { EMAIL, SOCIALS } from '../data/site'
+import { EMAIL } from '../data/site'
+import SocialLinks from './SocialLinks'
 import '../styles/components/ContactBlock.css'
 
 function ContactBlock() {
@@ -6,12 +7,8 @@ function ContactBlock() {
         <div className="contact-block">
             <a href={`mailto:${EMAIL}`} className="big-line">{EMAIL}</a>
 
-            <div className="mono socials-row">
-                {SOCIALS.map(social => (
-                    <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer">
-                        {social.short}
-                    </a>
-                ))}
+            <div className="socials-row">
+                <SocialLinks />
             </div>
         </div>
     )

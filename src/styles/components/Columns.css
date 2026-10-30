@@ -23,6 +23,8 @@
 
 @media (max-width: 999px) {
     .col--mid { padding-top: 40px; }
+    /* Stacked layout: an empty side column would only add blank space */
+    .col--empty { display: none; }
 }
 
 @media (min-width: 1000px) {
@@ -39,4 +41,21 @@
     .col--right { padding: 96px var(--gutter) 20px 30px; }
     .col--left, .col--mid { border-right: 1px solid var(--line); }
     .col--mid { padding: 96px 10px 0; }
+}
+
+/* ── Middle column only (Work, Contact) ── */
+
+/* Small desktops: no room for the empty sides, the middle takes the full width */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .columns--single { grid-template-columns: 1fr; }
+    .columns--single .col--empty { display: none; }
+    .columns--single .col--mid { border-right: 0; padding: 96px var(--gutter) 0; }
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+    .columns--single .display { font-size: 52px; }
+}
+
+@media (max-width: 809px) {
+    .columns--single .display { font-size: 40px; }
 }

@@ -14,13 +14,23 @@ function Fade({ children }) {
     )
 }
 
+// Side column; without content it stays as an empty slot so the middle keeps its place
+function Aside({ side, children }) {
+    if (!children) return <aside className={`col col--${side} col--empty`} />
+
+    return <aside className={`col col--${side}`}><Fade>{children}</Fade></aside>
+}
+
 // Three-column page layout: left aside, scrollable middle, right aside
 function Columns({ left, right, children }) {
+    // Pages with only the middle column get their own responsive rules
+    const className = left || right ? 'columns' : 'columns columns--single'
+
     return (
-        <div className="columns">
-            <aside className="col col--left"><Fade>{left}</Fade></aside>
+        <div className={className}>
+            <Aside side="left">{left}</Aside>
             <main className="col col--mid"><Fade>{children}</Fade></main>
-            <aside className="col col--right"><Fade>{right}</Fade></aside>
+            <Aside side="right">{right}</Aside>
         </div>
     )
 }

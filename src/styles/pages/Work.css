@@ -16,3 +16,14 @@
     padding-bottom: 30px;
 }
 .work-grid .proj-meta { font-size: var(--text-md); }
+
+/* Tablet: the grid has the full width, two projects per row */
+@media (min-width: 810px) and (max-width: 1199px) {
+    .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 20px; }
+}
+
+/* Phone: one project per row and the filters go under the title */
+@media (max-width: 809px) {
+    .work-head { flex-direction: column; padding-bottom: 40px; }
+    .work-grid { grid-template-columns: 1fr; }
+}

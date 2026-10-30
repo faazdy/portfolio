@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { localizeProjects } from '../data/i18n'
 import Columns from '../components/Columns'
 import ProjectCard from '../components/ProjectCard'
-import { HomeLeft, HomeRight } from '../components/HomeSide'
 import RevealText from '../components/RevealText'
 import '../styles/pages/Work.css'
 
@@ -17,7 +16,7 @@ function Work({ t, goTo }) {
     )
 
     return (
-        <Columns left={<HomeLeft t={t} />} right={<HomeRight t={t} />}>
+        <Columns>
             <div className="work-head">
                 <RevealText as="h1" className="display">{t.workTitle}</RevealText>
 

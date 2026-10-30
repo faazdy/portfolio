@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PAGES } from '../data/site'
 import '../styles/components/Navbar.css'
 
@@ -41,8 +41,26 @@ function LanguageSwitch({ lang, setLang }) {
     )
 }
 
+// "+" that turns into an "×" when the menu is open
+function MenuButton({ open, onClick, t }) {
+    return (
+        <button
+            type="button"
+            className="burger"
+            onClick={onClick}
+            aria-label={t.menu}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+        >
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg>
+        </button>
+    )
+}
+
 function Navbar({ page, lang, setLang, t, goTo }) {
     const [now, setNow] = useState(new Date())
+    const [menuOpen, setMenuOpen] = useState(false)
+    const headerRef = useRef(null)
 
     // Clock lives here so only the header re-renders every second
     useEffect(() => {
@@ -50,9 +68,30 @@ function Navbar({ page, lang, setLang, t, goTo }) {
         return () => clearInterval(timer)
     }, [])
 
+    // The open menu closes with Escape or a tap outside the header
+    useEffect(() => {
+        if (!menuOpen) return
+
+        const closeOnEscape = (event) => { if (event.key === 'Escape') setMenuOpen(false) }
+        const closeOnOutside = (event) => { if (!headerRef.current.contains(event.target)) setMenuOpen(false) }
+
+        document.addEventListener('keydown', closeOnEscape)
+        document.addEventListener('pointerdown', closeOnOutside)
+        return () => {
+            document.removeEventListener('keydown', closeOnEscape)
+            document.removeEventListener('pointerdown', closeOnOutside)
+        }
+    }, [menuOpen])
+
+    // Menu links also close the menu
+    const goToAndClose = (name) => (event) => {
+        setMenuOpen(false)
+        goTo(name)(event)
+    }
+
     return (
         <>
-            <header className="site-header">
+            <header className="site-header" ref={headerRef}>
                 <a href="#" onClick={goTo('home')} className="brand">
                     <span className="brand-mark">◆</span>Leonardo
                 </a>
@@ -66,12 +105,21 @@ function Navbar({ page, lang, setLang, t, goTo }) {
                     <LanguageSwitch lang={lang} setLang={setLang} />
                     <a href="#contact" onClick={goTo('contact')} className="cta">{t.cta}</a>
                 </div>
-            </header>
 
-            {/* Mobile: links go in their own row under the header */}
-            <nav className="nav nav--narrow">
-                <NavLinks page={page} t={t} goTo={goTo} />
-            </nav>
+                {/* Mobile: everything but the brand goes in a panel under the header */}
+                <MenuButton open={menuOpen} onClick={() => setMenuOpen(open => !open)} t={t} />
+
+                <div id="mobile-menu" className={menuOpen ? 'mobile-menu is-open' : 'mobile-menu'}>
+                    <nav className="nav">
+                        <NavLinks page={page} t={t} goTo={goToAndClose} />
+                    </nav>
+                    <a href="#contact" onClick={goToAndClose('contact')} className="cta">{t.cta}</a>
+                    <div className="mobile-menu-foot">
+                        <span className="muted">{formatClock(now, lang)}</span>
+                        <LanguageSwitch lang={lang} setLang={setLang} />
+                    </div>
+                </div>
+            </header>
         </>
     )
 }

@@ -4,9 +4,6 @@
    (on mobile the column has no fixed height, so they do nothing) */
 .socials-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-block: auto; }
 
-.social-icon { display: flex; }
-.social-icon svg { width: 16px; height: 16px; fill: currentColor; }
-
 .skills { display: flex; flex-direction: column; }
 .skills span {
     font-size: var(--text-xl);
