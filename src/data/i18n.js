@@ -63,16 +63,16 @@ export const TRANSLATIONS = {
         ],
         timelineLabel: 'Experience & education',
         timeline: [
-            { period: "'26–now", title: 'Systems Engineering Intern', org: 'Capital Salud EPS-S' },
-            { period: "'23–now", title: 'Freelance Web Developer', org: 'Independent' },
-            { period: "'22–'27", title: 'Systems Engineering', org: 'UNIMINUTO' },
+            { period: "2026–now", title: 'Systems Engineering Intern', org: 'Capital Salud EPS-S' },
+            { period: "2023–now", title: 'Freelance Web Developer', org: 'Independent' },
+            { period: "2022–2027", title: 'Systems Engineering', org: 'UNIMINUTO' },
         ],
         experienceLabel: 'WHAT I ACHIEVED',
         experience: [
             {
                 role: 'Systems Engineering Intern',
                 company: 'Capital Salud EPS-S',
-                period: 'May 2026 – Present',
+                period: 'May 2026 – Nov 2026',
                 achievements: [
                     'Built SABIA (Automation, Information Base and Artificial Intelligence System) to cut information-search time and repetitive tasks in the Quality team.',
                     'Built an internal RAG (Retrieval-Augmented Generation) AI solution: a corporate second brain to centralize, query and retrieve the Quality team knowledge.',
@@ -86,7 +86,7 @@ export const TRANSLATIONS = {
             {
                 role: 'Freelance Web Developer',
                 company: 'Independent · Remote',
-                period: 'Jan 2023 – Present',
+                period: 'Since Dec 2023',
                 achievements: [
                     'Designed and built 8+ responsive websites for small businesses and content creators with React, Vue 3 and Node.js, delivered on time and within scope.',
                     'Raised the average Lighthouse Performance score by 35+ points across 3 projects with image optimization, lazy loading and code splitting.',
@@ -137,16 +137,16 @@ export const TRANSLATIONS = {
         ],
         timelineLabel: 'Experiencia y formación',
         timeline: [
-            { period: "'26–hoy", title: 'Practicante Ing. de Sistemas', org: 'Capital Salud EPS-S' },
-            { period: "'23–hoy", title: 'Desarrollador Web Freelance', org: 'Independiente' },
-            { period: "'22–'27", title: 'Ingeniería de Sistemas', org: 'UNIMINUTO' },
+            { period: "2026–hoy", title: 'Practicante Ing. de Sistemas', org: 'Capital Salud EPS-S' },
+            { period: "2023–hoy", title: 'Desarrollador Web Freelance', org: 'Independiente' },
+            { period: "2022–2027", title: 'Ingeniería de Sistemas', org: 'UNIMINUTO' },
         ],
         experienceLabel: 'LO QUE LOGRÉ',
         experience: [
             {
                 role: 'Practicante Ingeniero de Sistemas',
                 company: 'Capital Salud EPS-S',
-                period: 'May 2026 – Presente',
+                period: 'May 2026 – Nov 2026',
                 achievements: [
                     'Desarrollé SABIA (Sistema de Automatización, Base de Información e Inteligencia Artificial) para reducir el tiempo de búsqueda de información y las tareas repetitivas del área de Calidad.',
                     'Construí una solución interna de IA basada en RAG (Retrieval-Augmented Generation), un segundo cerebro corporativo para centralizar, consultar y recuperar la información del área de Calidad.',
@@ -160,7 +160,7 @@ export const TRANSLATIONS = {
             {
                 role: 'Desarrollador Web Freelance',
                 company: 'Independiente · Remoto',
-                period: 'Ene 2023 – Presente',
+                period: 'Desde Dic 2023',
                 achievements: [
                     'Diseñé y desarrollé más de 8 sitios web responsivos para pequeños negocios y creadores de contenido con React, Vue 3 y Node.js, entregando a tiempo y dentro del alcance acordado.',
                     'Mejoré el puntaje promedio de Lighthouse Performance en más de 35 puntos en 3 proyectos con optimización de imágenes, lazy loading y code splitting.',

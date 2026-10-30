@@ -3,6 +3,7 @@ import { localizeProjects } from '../data/i18n'
 import Columns from '../components/Columns'
 import ProjectCard from '../components/ProjectCard'
 import { HomeLeft, HomeRight } from '../components/HomeSide'
+import RevealText from '../components/RevealText'
 import '../styles/pages/Work.css'
 
 const SHOW_ALL = 0
@@ -18,7 +19,7 @@ function Work({ t, goTo }) {
     return (
         <Columns left={<HomeLeft t={t} />} right={<HomeRight t={t} />}>
             <div className="work-head">
-                <h1 className="display">{t.workTitle}</h1>
+                <RevealText as="h1" className="display">{t.workTitle}</RevealText>
 
                 <div className="filters">
                     {t.filters.map((label, index) => (

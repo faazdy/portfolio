@@ -4,6 +4,7 @@ import { CERTIFICATIONS } from '../data/i18n'
 import Columns from '../components/Columns'
 import ContactBlock from '../components/ContactBlock'
 import Photo from '../components/Photo'
+import RevealText from '../components/RevealText'
 import '../styles/pages/Info.css'
 
 const testimonial = experiences.find(job => job.testimonial)?.testimonial
@@ -14,7 +15,7 @@ function AboutColumn({ t }) {
 
     return (
         <>
-            <h1 className="display">{t.aboutTitle}</h1>
+            <RevealText as="h1" className="display">{t.aboutTitle}</RevealText>
 
             <div className="photo-wrap photo-wrap--left">
                 <Photo className="photo--left" />

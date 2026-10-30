@@ -1,0 +1,6 @@
+/* Hidden until GSAP splits the text, so the unsplit text never flashes */
+.reveal { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; }
+}

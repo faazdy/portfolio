@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Columns from '../components/Columns'
 import ContactBlock from '../components/ContactBlock'
 import { HomeLeft, HomeRight } from '../components/HomeSide'
+import RevealText from '../components/RevealText'
 import '../styles/pages/Contact.css'
 
 const FORMSPREE_URL = 'https://formspree.io/f/mjkalzry'
@@ -34,7 +35,7 @@ function Contact({ t }) {
 
     return (
         <Columns left={<HomeLeft t={t} />} right={<HomeRight t={t} />}>
-            <h1 className="display">{t.contactTitle}</h1>
+            <RevealText as="h1" className="display">{t.contactTitle}</RevealText>
             <p className="lede lede--narrow">{t.contactIntro}</p>
 
             <div className="contact-top">

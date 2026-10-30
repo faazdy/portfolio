@@ -68,8 +68,9 @@ function App() {
     return (
         <div className="shell">
             <Navbar page={page} lang={lang} setLang={setLang} t={t} goTo={goTo} />
-            {/* key: remount on every route change so the scroll resets and the fade-in replays */}
-            <CurrentPage key={route} t={t} goTo={goTo} slug={projectSlug} />
+            {/* key: remount on every route or language change, so the scroll resets,
+                the animations replay and RevealText re-splits the new text */}
+            <CurrentPage key={`${route}-${lang}`} t={t} goTo={goTo} slug={projectSlug} />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { localizeProjects } from '../data/i18n'
 import Columns from '../components/Columns'
 import ProjectCard from '../components/ProjectCard'
 import { HomeLeft, HomeRight } from '../components/HomeSide'
+import RevealText from '../components/RevealText'
 import '../styles/pages/Home.css'
 
 const FEATURED_COUNT = 3
@@ -12,9 +13,9 @@ function Home({ t, goTo }) {
 
     return (
         <Columns left={<HomeLeft t={t} />} right={<HomeRight t={t} />}>
-            <p className="statement sticky">
+            <RevealText as="p" className="statement sticky" delay={0.15}>
                 {t.stmtA} <span className="muted">{t.stmtB}</span>
-            </p>
+            </RevealText>
 
             <div className="spacer" />
 

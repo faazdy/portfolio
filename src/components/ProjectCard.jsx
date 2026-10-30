@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { localizeProjects } from '../data/i18n'
 import Columns from './Columns'
+import RevealText from './RevealText'
 import '../styles/components/ProjectCard.css'
 
 // Two versions, both open the project detail on click:
@@ -44,7 +45,7 @@ function DetailFacts({ project, t }) {
 
     return (
         <>
-            <h1 className="display">{project.shortName}</h1>
+            <RevealText as="h1" className="display">{project.shortName}</RevealText>
 
             <div className="pd-thumb">
                 <img src={project.cardImg} alt="" />
