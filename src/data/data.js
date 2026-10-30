@@ -25,9 +25,10 @@ import DOCKERICON from "/assets/icons/docker.svg"
 import EXPRESSICON from "/assets/icons/express.svg"
 import POSTGRESQLICON from "/assets/icons/postgresql.svg"
 import MOTION from "/assets/icons/motion.png"
-import WORDPRESS from "/assets/icons/wp.png"
 import TSICON from "/assets/icons/ts.png"
 import VUEICON from "/assets/icons/vue.svg"
+import PYICON from "/assets/icons/python.svg"
+import SQLSERVERICON from "/assets/icons/sql-server.svg"
 
 
 
@@ -91,12 +92,12 @@ export const projects = [
 export const experiences = [
     {
         id: uuid(),
-        period: "Actualmente",
-        role: "Practicante de Ingeniería de Sistemas",
-        company: "Capital Salud EPS-S · Dirección de Estrategia y Planeación",
+        period: "Present",
+        role: "Systems Engineering Trainee",
+        company: "Capital Salud EPS-S · Strategy & Planning Department",
         current: true,
-        desc: "Diseñé y desarrollé SABIA, un sistema interno que centraliza la documentación de Almera SGI en una web consultable y un asistente de IA, eliminando grabaciones de +1h. Incluye skills que automatizan tareas de la coordinación de calidad —presentaciones institucionales y diagramas de flujo— ahorrando hasta un día completo de trabajo por tarea, e informes instantáneos con KPIs validadas por dirección, sin necesidad de saber Power BI. También parametricé el SGI de Almera, desarrollé GuIAs (bases de conocimiento para agentes IA) y optimicé tableros Power BI + SQL Server para la toma de decisiones financieras en salud.",
-        tags: ["IA aplicada", "Automatización", "Claude Skills", "SGI Almera", "Power BI & SQL Server", "Reportes & KPIs"],
+        desc: "Designed and built SABIA, an internal system that centralizes Almera SGI documentation in a searchable web portal plus an AI assistant, replacing 1h+ training recordings. It includes skills that automate tasks for the quality coordination team — institutional presentation and flowchart generators — saving up to a full day of work per task, plus instant reports with KPIs validated by management, no Power BI knowledge required. Also configured Almera's SGI (Integrated Management System), built GuIAs (knowledge bases for AI agents), and optimized Power BI + SQL Server dashboards for health-finance decision-making.",
+        tags: ["Applied AI", "Automation", "Claude Skills", "Almera SGI", "Power BI & SQL Server", "Reports & KPIs"],
     },
     {
         id: uuid(),
@@ -116,6 +117,11 @@ export const experiences = [
 export const stackLanguages = [
     {
         id: uuid(),
+        nameTechnology: "JavaScript",
+        icon: JSICON
+    },
+    {
+        id: uuid(),
         nameTechnology: "HTML",
         icon: HTMLICON
     },
@@ -126,13 +132,13 @@ export const stackLanguages = [
     },
     {
         id: uuid(),
-        nameTechnology: "JavaScript",
-        icon: JSICON
-    },
-    {
-        id: uuid(),
         nameTechnology: "TypeScript",
         icon: TSICON
+    },
+    {
+        id: uuid,
+        nameTechnology: "Python",
+        icon: PYICON
     },
     {
         id: uuid(),
@@ -168,6 +174,11 @@ export const stackLanguages = [
         id: uuid(),
         nameTechnology: "Express",
         icon: EXPRESSICON
+    },
+    {
+        id: uuid(),
+        nameTechnology: "SQL Server",
+        icon: SQLSERVERICON
     },
     {
         id: uuid(),

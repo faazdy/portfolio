@@ -1,0 +1,25 @@
+.spacer { height: clamp(120px, 22vh, 280px); flex-shrink: 0; }
+
+.list-head { align-items: baseline; padding-bottom: 16px; }
+.h-sm { 
+  font-size: var(--text-2xl); 
+  letter-spacing: -0.02em; 
+}
+.h-sm::after{
+  content: '}';
+  color: var(--accent);
+  padding-left: 7px;
+}
+.h-sm::before{
+  content: '{';
+  color: var(--accent);
+  padding-right: 7px;
+}
+
+/* Solid background so the sticky title doesn't show through the gaps between cards */
+.featured { display: flex; flex-direction: column; gap: 32px; padding-bottom: 30px; z-index: 999; background: var(--bg); }
+
+/* Tablet: two featured projects per row */
+@media (min-width: 600px) and (max-width: 999px) {
+    .featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 18px; }
+}

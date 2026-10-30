@@ -1,0 +1,2 @@
+.photo { display: block; object-fit: cover; background: #f3f3f3; filter: grayscale(1); transition: filter .4s; }
+.photo:hover { filter: none; }

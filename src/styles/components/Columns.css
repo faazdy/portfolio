@@ -1,0 +1,42 @@
+/* ── Three-column layout ── */
+
+.columns {
+    flex: 1;
+    display: grid;
+    grid-template-columns: var(--cols);
+    min-height: 0;
+}
+
+.col { min-width: 0; display: flex; flex-direction: column; }
+.col--left, .col--right { padding: 48px var(--gutter); }
+.col--left { gap: 40px; }
+.col--right { gap: 32px; }
+.col--mid { padding: 24px var(--gutter); }
+
+.fade {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: inherit;
+}
+
+@media (max-width: 999px) {
+    .col--mid { padding-top: 40px; }
+}
+
+@media (min-width: 1000px) {
+    /* The page scrolls as a whole; side columns stay fixed beside the middle one */
+    .col--left, .col--right {
+        position: sticky;
+        top: var(--header-h);
+        align-self: start;
+        height: calc(100vh - var(--header-h));
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+    .col--left { padding: 96px 30px 20px var(--gutter); }
+    .col--right { padding: 96px var(--gutter) 20px 30px; }
+    .col--left, .col--mid { border-right: 1px solid var(--line); }
+    .col--mid { padding: 96px 10px 0; }
+}

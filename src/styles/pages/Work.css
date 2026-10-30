@@ -1,0 +1,18 @@
+.work-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 56px;
+}
+.filters { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; font-size: var(--text-lg); }
+.filters .link:hover { color: var(--accent); }
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 40px 18px;
+    padding-bottom: 30px;
+}
+.work-grid .proj-meta { font-size: var(--text-md); }

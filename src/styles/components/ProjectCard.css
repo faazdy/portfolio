@@ -1,0 +1,114 @@
+.proj { display: flex; flex-direction: column; gap: 12px; background-color: var(--bg)}
+.proj:hover { color: var(--ink); background: var(--line); }
+.proj:hover .proj-img { opacity: .85; }
+
+.proj-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top;
+    background: #f3f3f3;
+    border: 1px solid var(--line);
+    transition: opacity .2s;
+}
+
+.proj-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: var(--text-lg);
+    letter-spacing: -0.02em;
+}
+.proj-name { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+.proj-name .diamond { font-size: 11px; }
+
+.proj-desc { margin: 0; color: var(--muted); font-size: var(--text-sm); line-height: 1.45; text-wrap: pretty; }
+.proj-stack { font-size: 12px; }
+
+/* ── Project detail page ── */
+
+/* Left column */
+.pd-thumb {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(100%, 172px);
+    margin-top: clamp(40px, 14vh, 200px);
+}
+.pd-thumb img {
+    width: 100%;
+    aspect-ratio: 172 / 129;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--line);
+}
+.pd-thumb span { align-self: flex-end; font-size: var(--text-sm); }
+
+.pd-fact {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: var(--text-md);
+}
+.pd-fact .muted { font-size: var(--text-sm); }
+.pd-fact span:last-child { text-align: right; }
+
+/* Middle column */
+.pd-tagline {
+    margin: 0;
+    font-size: clamp(20px, 1.7vw, 24px);
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+}
+
+.pd-demo {
+    align-self: flex-start;
+    margin-top: 32px;
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 22px;
+    font-size: var(--text-sm);
+    transition: background .15s;
+}
+.pd-demo:hover { background: var(--accent); color: #fff; }
+
+.pd-spacer { height: clamp(80px, 18vh, 240px); flex-shrink: 0; }
+
+.pd-live { align-items: baseline; padding-bottom: 10px; }
+.pd-live .mono { font-size: 12px; }
+
+.pd-gallery { display: flex; flex-direction: column; gap: 18px; padding-bottom: 30px; }
+.pd-gallery img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    background: #f3f3f3;
+    border: 1px solid var(--line);
+}
+.pd-main { aspect-ratio: 4 / 3; }
+
+/* Extra screenshots: squares in pairs, an odd last one spans the full width */
+.pd-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.pd-grid img { aspect-ratio: 1; }
+.pd-grid img:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+
+/* Right column */
+.pd-notes { display: flex; flex-direction: column; gap: 36px; }
+.pd-note { display: flex; flex-direction: column; gap: 8px; }
+.pd-note p { margin: 0; font-size: var(--text-sm); line-height: 1.45; text-wrap: pretty; }
+
+.pd-label { font-size: var(--text-base); padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+
+.pd-chips { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px; }
+.pd-chips span { font-size: 12px; border: 1px solid var(--line-strong); padding: 5px 9px; }
+
+.pd-pager { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-base); transition: opacity .15s; }
+.pd-pager:hover { color: var(--ink); opacity: .6; }
+.pd-pager .muted { font-size: var(--text-sm); }
+.pd-pager--next { align-items: flex-end; text-align: right; }

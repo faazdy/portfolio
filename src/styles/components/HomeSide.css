@@ -1,0 +1,41 @@
+/* ── Left side ── */
+
+/* Auto margins center it vertically between the title and the skills
+   (on mobile the column has no fixed height, so they do nothing) */
+.socials-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-block: auto; }
+
+.social-icon { display: flex; }
+.social-icon svg { width: 16px; height: 16px; fill: currentColor; }
+
+.skills { display: flex; flex-direction: column; }
+.skills span {
+    font-size: var(--text-xl);
+    letter-spacing: -0.02em;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+/* ── Right side ── */
+
+.avail-row { align-items: flex-start; }
+/* The text may wrap so the photo keeps most of the column width */
+.avail { display: flex; align-items: baseline; gap: 6px; font-size: var(--text-md); min-width: 0; }
+/* Grows with the screen: ~148px at 1280, up to 190px */
+.photo--right { flex-shrink: 0; width: clamp(120px, 11.6vw, 190px); aspect-ratio: 223 / 295; }
+
+.role-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 4px;
+    font-size: var(--text-md);
+    padding-top: 24px;
+}
+
+.footer-row { align-items: flex-end; flex-wrap: wrap; }
+
+@media (max-width: 480px) {
+    .avail-row { flex-direction: column; }
+}
+
