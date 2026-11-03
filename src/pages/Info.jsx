@@ -102,6 +102,26 @@ function Certifications({ t }) {
     )
 }
 
+// AI tools I work with (Claude, Claude Code, skills...)
+function AiTools({ t }) {
+    return (
+        <section className="info-section">
+            <span className="accent mono label">{t.aiLabel}</span>
+
+            <div>
+                {t.aiTools.map(tool => (
+                    <div key={tool.name} className="cert">
+                        <div className="cert-body">
+                            <span>{tool.name}</span>
+                            <span className="muted">{tool.desc}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    )
+}
+
 function Info({ t }) {
     return (
         <Columns left={<AboutColumn t={t} />} right={<ExperienceColumn t={t} />}>
@@ -117,6 +137,7 @@ function Info({ t }) {
             )}
 
             <Achievements t={t} />
+            <AiTools t={t} />
             <Certifications t={t} />
 
             <div className="push-bottom stack-wrap">

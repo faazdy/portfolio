@@ -31,7 +31,8 @@ const PROJECT_DETAILS = {
 // Certifications (from the HV), shown on the Info page
 export const CERTIFICATIONS = [
     { name: 'IA Sin Límites', issuer: 'AWS', year: 2026 },
-    { name: 'Estrategias para la Innovación en el sector público', issuer: 'MinTIC', year: 2026 },
+    { name: 'DevOps Specialist', issuer: 'EXACOM', year: 2026 },
+    { name: 'Estrategias para la Innovación en el Sector Público', issuer: 'MinTIC', year: 2026 },
     { name: 'Visualización de Datos con Power BI', issuer: 'SENA', year: 2025 },
     { name: 'The Web Developer Bootcamp', issuer: 'Udemy', year: 2024 },
     { name: 'NDG Linux Essentials', issuer: 'Cisco Networking Academy', year: 2023 },
@@ -64,7 +65,7 @@ export const TRANSLATIONS = {
         ],
         timelineLabel: 'Experience & education',
         timeline: [
-            { period: "2026–now", title: 'Systems Engineering Intern', org: 'Capital Salud EPS-S' },
+            { period: "2026", title: 'Systems Engineering Intern', org: 'Capital Salud EPS-S' },
             { period: "2023–now", title: 'Freelance Web Developer', org: 'Independent' },
             { period: "2022–2027", title: 'Systems Engineering', org: 'UNIMINUTO' },
         ],
@@ -99,6 +100,14 @@ export const TRANSLATIONS = {
             },
         ],
         certsLabel: 'CERTIFICATIONS',
+        aiLabel: 'AI TOOLS',
+        aiTools: [
+            { name: 'Claude Code, Codex, OpenCode', desc: 'Agentic development from the terminal' },
+            { name: 'Claude Skills', desc: 'Custom skills that automate team workflows' },
+            { name: 'LLM Integration', desc: 'Connecting LLMs to apps and CLI tools via API' },
+            { name: 'RAG', desc: 'Knowledge bases for AI agents' },
+            { name: 'Prompt engineering', desc: 'Reliable, structured outputs' },
+        ],
         workTitle: 'My Work.',
         filters: ['All', 'Apps', 'Libraries', 'Websites'],
         categories: { 1: 'App', 2: 'Library', 3: 'Website' },
@@ -139,7 +148,7 @@ export const TRANSLATIONS = {
         ],
         timelineLabel: 'Experiencia y formación',
         timeline: [
-            { period: "2026–hoy", title: 'Practicante Ing. de Sistemas', org: 'Capital Salud EPS-S' },
+            { period: "2026", title: 'Practicante Ing. de Sistemas', org: 'Capital Salud EPS-S' },
             { period: "2023–hoy", title: 'Desarrollador Web Freelance', org: 'Independiente' },
             { period: "2022–2027", title: 'Ingeniería de Sistemas', org: 'UNIMINUTO' },
         ],
@@ -174,6 +183,14 @@ export const TRANSLATIONS = {
             },
         ],
         certsLabel: 'CERTIFICACIONES',
+        aiLabel: 'HERRAMIENTAS DE IA',
+        aiTools: [
+            { name: 'Claude Code, Codex, OpenCode', desc: 'Desarrollo agéntico desde la terminal' },
+            { name: 'Claude Skills', desc: 'Skills a medida que automatizan flujos del equipo' },
+            { name: 'Integración de LLMs', desc: 'Conexión de LLMs a apps y herramientas CLI vía API' },
+            { name: 'RAG', desc: 'Bases de conocimiento para agentes de IA' },
+            { name: 'Prompt engineering', desc: 'Respuestas confiables y estructuradas' },
+        ],
         workTitle: 'Proyectos.',
         filters: ['Todos', 'Apps', 'Librerías', 'Sitios web'],
         categories: { 1: 'App', 2: 'Librería', 3: 'Sitio web' },

@@ -29,6 +29,7 @@ import TSICON from "/assets/icons/ts.png"
 import VUEICON from "/assets/icons/vue.svg"
 import PYICON from "/assets/icons/python.svg"
 import SQLSERVERICON from "/assets/icons/sql-server.svg"
+import POWERBI from "/assets/icons/powerbi.webp"
 
 
 
@@ -139,6 +140,11 @@ export const stackLanguages = [
         id: uuid,
         nameTechnology: "Python",
         icon: PYICON
+    },
+    {
+        id: uuid(),
+        nameTechnology: 'Power BI',
+        icon: POWERBI
     },
     {
         id: uuid(),
