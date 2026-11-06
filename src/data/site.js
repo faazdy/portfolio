@@ -12,5 +12,8 @@ export const SOCIALS = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/leonardo-rengifo-ramos-694022210' },
 ]
 
-// Values match the position of each label in `filters` (0 is "All")
+// Type of project shown on its card; keys of `categories` in the translations
 export const CATEGORY = { APP: 1, LIBRARY: 2, WEBSITE: 3 }
+
+// Values match the position of each label in `filters` (0 is "All")
+export const SCOPE = { PROFESSIONAL: 1, PERSONAL: 2 }

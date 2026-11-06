@@ -8,11 +8,11 @@ import '../styles/pages/Work.css'
 const SHOW_ALL = 0
 
 function Work({ t, goTo }) {
-    // The filter index is the category number (see CATEGORY in data/site.js)
-    const [category, setCategory] = useState(SHOW_ALL)
+    // The filter index is the scope number (see SCOPE in data/site.js)
+    const [scope, setScope] = useState(SHOW_ALL)
 
     const visibleProjects = localizeProjects(t).filter(project =>
-        category === SHOW_ALL || project.category === category
+        scope === SHOW_ALL || project.scope === scope
     )
 
     return (
@@ -25,8 +25,8 @@ function Work({ t, goTo }) {
                         <button
                             type="button"
                             key={label}
-                            onClick={() => setCategory(index)}
-                            className={category === index ? 'link is-active' : 'link'}
+                            onClick={() => setScope(index)}
+                            className={scope === index ? 'link is-active' : 'link'}
                         >
                             {label}
                         </button>

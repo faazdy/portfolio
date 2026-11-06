@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { localizeProjects } from '../data/i18n'
 import Columns from './Columns'
+import ImageModal from './ImageModal'
 import RevealText from './RevealText'
 import '../styles/components/ProjectCard.css'
 
@@ -104,7 +105,17 @@ function DetailNotes({ project, previous, next, t, goTo }) {
     )
 }
 
+// Project image that opens the enlarged view on click
+function ZoomableImage({ src, alt, label, onOpen, ...imgProps }) {
+    return (
+        <button type="button" className="pd-zoom" aria-label={`${label}: ${alt}`} onClick={() => onOpen(src)}>
+            <img src={src} alt={alt} {...imgProps} />
+        </button>
+    )
+}
+
 export function ProjectDetail({ t, goTo, slug }) {
+    const [enlargedImage, setEnlargedImage] = useState(null)
     const projects = localizeProjects(t)
     const index = projects.findIndex(project => project.slug === slug)
     const notFound = index === -1
@@ -119,7 +130,8 @@ export function ProjectDetail({ t, goTo, slug }) {
     const project = projects[index]
     const previous = projects[(index - 1 + projects.length) % projects.length]
     const next = projects[(index + 1) % projects.length]
-    const demoLabel = project.url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+    // Internal projects have no public URL
+    const demoLabel = project.url?.replace(/^https?:\/\//, '').replace(/\/$/, '')
 
     return (
         <Columns
@@ -128,27 +140,55 @@ export function ProjectDetail({ t, goTo, slug }) {
         >
             <p className="pd-tagline">{project.description}</p>
 
-            <a href={project.url} target="_blank" rel="noopener noreferrer" className="pd-demo">
-                {t.project.demoBtn} ↗
-            </a>
+            {project.url && (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="pd-demo">
+                    {t.project.demoBtn} ↗
+                </a>
+            )}
 
             <div className="pd-spacer" />
 
-            <div className="row-between pd-live">
-                <span>{t.project.live}</span>
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="mono muted">
-                    {demoLabel} ↗
-                </a>
-            </div>
+            {project.url && (
+                <div className="row-between pd-live">
+                    <span>{t.project.live}</span>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="mono muted">
+                        {demoLabel} ↗
+                    </a>
+                </div>
+            )}
 
             <div className="pd-gallery">
-                <img src={project.cardImg} alt={project.shortName} className="pd-main" />
+                <ZoomableImage
+                    src={project.cardImg}
+                    alt={project.shortName}
+                    label={t.project.enlarge}
+                    onOpen={setEnlargedImage}
+                    className="pd-main"
+                />
                 {project.gallery.length > 0 && (
                     <div className="pd-grid">
-                        {project.gallery.map(src => <img key={src} src={src} alt={project.shortName} loading="lazy" />)}
+                        {project.gallery.map(src => (
+                            <ZoomableImage
+                                key={src}
+                                src={src}
+                                alt={project.shortName}
+                                label={t.project.enlarge}
+                                onOpen={setEnlargedImage}
+                                loading="lazy"
+                            />
+                        ))}
                     </div>
                 )}
             </div>
+
+            {enlargedImage && (
+                <ImageModal
+                    src={enlargedImage}
+                    alt={project.shortName}
+                    closeLabel={t.project.close}
+                    onClose={() => setEnlargedImage(null)}
+                />
+            )}
         </Columns>
     )
 }

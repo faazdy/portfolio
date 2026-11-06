@@ -35,12 +35,20 @@ import POWERBI from "/assets/icons/powerbi.webp"
 
 export const projects = [
     {
+        id: uuid(),
+        nameProject: 'SABIA',
+        description: "Automation, Information Base and Artificial Intelligence System for Capital Salud's Quality team: a web assistant that answers from the Almera SGI documentation, Claude skills that generate institutional presentations and flowcharts, and reports that run in the browser.",
+        stack:[HTML, CSS, JavaScript],
+        techStack: ["Python", "FastAPI", "JavaScript", "OpenRouter", "Render"],
+        cardImg: '/assets/content/projects/SABIA/image.png',
+    },
+    {
        id: uuid(),
         nameProject: 'PinGym - Gym Saas & Fitness App',
         description: 'PinGym is a management application for gyms (Gym as a Service). It allows a gym to manage its facilities, clients, membership plans, workout routines, attendance, lockers, and communications, and it allows clients to register (including via QR), view their routines, progress, and attendance.',
         stack:[Vue, CSS, Express, PsSQL],
         techStack: ["Vue", "CSS", "Express", "PostgreSQL"],
-        cardImg: "/assets/content/projects/pingym.png",
+        cardImg: "/assets/content/projects/pingym/pingym.png",
         url: 'https://pingym.vercel.app/' 
     },
     {
@@ -49,7 +57,7 @@ export const projects = [
         description: 'A lightweight and fast QR code generator built with Vue and Sass. Users can create custom QR codes in seconds, preview them instantly, and download them in high-quality PNG format through a clean and responsive UI.',
         stack:[Vue, Sass],
         techStack: ["Vue", "Sass"],
-        cardImg: "/assets/content/projects/qrme.png",
+        cardImg: "/assets/content/projects/qrme/qrme.png",
         url: 'https://qrmeapp.vercel.app/'
     },
     {
@@ -58,7 +66,7 @@ export const projects = [
         description: "A curated collection of modular UI components, interactive interfaces, and design explorations inspired by modern landing pages.",
         stack:[Vue, JavaScript, CSS],
         techStack: ["Vue", "CSS", "JavaScript"],
-        cardImg: '/assets/content/projects/uinspired.png',
+        cardImg: '/assets/content/projects/uinspired/uinspired.png',
         url: "https://uinspirate.vercel.app/"
     },
     {
@@ -67,7 +75,7 @@ export const projects = [
         description: 'KapleCSS is a minimal premium CSS framework designed to help developers create beautiful, consistent websites with ease. Built on a foundation of design tokens, it provides a single source of truth for colors, typography, and spacing, keeping every project cohesive from day one.',
         stack:[Sass, JavaScript, HTML],
         techStack: ["Sass", "JavaScript"],
-        cardImg: '/assets/content/projects/kaplecss.png',
+        cardImg: '/assets/content/projects/kaplecss/kaplecss.png',
         url: "https://kaplecss.vercel.app/"
     },
     {
@@ -76,7 +84,7 @@ export const projects = [
         description: 'Landing page developed for GenMax Academy, an academy focused on enhancing facial aesthetics and boosting personal image, founded by well-known TikTok creators. The website presents the brand with a modern, dynamic design aimed at delivering strong visual impact and real results.',
         stack:[React, CSS, Bootstrap],
         techStack: ["React", "CSS", "Framer Motion", "Bootstrap"],
-        cardImg: '/assets/content/projects/genmax.png',
+        cardImg: '/assets/content/projects/genmax/genmax.png',
         url: "https://www.genmaxacademy.com/"
     },
     {
@@ -85,7 +93,7 @@ export const projects = [
         description: 'UI Komponents is a platform that showcases a collection of buttons, shadows, and cards for user interfaces. The website allows users to preview and copy the code for each component, making it easy to integrate them into any web development project.',
         stack:[React, Sass],
         techStack: ["React", "Sass"],
-        cardImg: '/assets/content/projects/uikomponents.png',
+        cardImg: '/assets/content/projects/uikomponents/uikomponents.png',
         url: "https://uikomponents.vercel.app/"
     },
 ];

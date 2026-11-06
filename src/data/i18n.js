@@ -1,14 +1,21 @@
 import { projects } from './data'
-import { CATEGORY } from './site'
+import { CATEGORY, SCOPE } from './site'
 
 // Category of each project, keyed by nameProject in data.js
 const PROJECT_CATEGORY = {
+    'SABIA': CATEGORY.APP,
     'PinGym - Gym Saas & Fitness App': CATEGORY.APP,
     'QRMe - QR Generator App': CATEGORY.APP,
     'UInspired': CATEGORY.LIBRARY,
     'KapleCSS - CSS Minimal Framework': CATEGORY.LIBRARY,
     'GenMax Academy': CATEGORY.WEBSITE,
     'UI Komponents': CATEGORY.LIBRARY,
+}
+
+// Real work for companies or clients, keyed by nameProject. Anything else is personal.
+const PROJECT_SCOPE = {
+    'SABIA': SCOPE.PROFESSIONAL,
+    'GenMax Academy': SCOPE.PROFESSIONAL,
 }
 
 // Optional extra info for the project detail page, keyed by nameProject.
@@ -22,10 +29,50 @@ const PROJECT_CATEGORY = {
 //     objective: { en: '...', es: '...' },
 //     challenge: { en: '...', es: '...' },
 //     solution: { en: '...', es: '...' },
-//     gallery: ['/assets/content/projects/pingym-2.png', '/assets/content/projects/pingym-3.png'],
+//     gallery: ['/assets/content/projects/pingym/pingym-2.png', '/assets/content/projects/pingym/pingym-3.png'],
 // },
 const PROJECT_DETAILS = {
-    'GenMax Academy': { client: 'GenMax Academy' },
+    'SABIA': {
+        year: 2026,
+        client: 'Capital Salud EPS-S',
+        role: { en: 'Design & development', es: 'Diseño y desarrollo' },
+        objective: {
+            en: 'Give the Quality team a single place to solve Almera SGI questions and automate its repetitive work.',
+            es: 'Dar al área de Calidad un único lugar para resolver dudas de Almera SGI y automatizar su trabajo repetitivo.',
+        },
+        challenge: {
+            en: 'The only source for an Almera question was a 1 to 3 hour training recording, where about two minutes held the answer, and recurring tasks depended on the few people who knew how to do them.',
+            es: 'La única fuente para una duda de Almera eran grabaciones de capacitación de 1 a 3 horas, donde unos dos minutos tenían la respuesta, y las tareas recurrentes dependían de las pocas personas que sabían hacerlas.',
+        },
+        solution: {
+            en: 'A FastAPI server on Render runs a RAG-lite assistant: BM25 picks the right Almera module and the model answers from its full guide, with exact paths and sources, and says so when something is not documented. The team adds knowledge by uploading Word, PDF, PowerPoint or Excel files through an ETL that rates each one with a traffic light before publishing it. SABIA also includes 10 Claude skills, two of which generate institutional presentations and flowcharts and save up to a full day of work per task, plus 2 dashboards that analyze Excel exports in the browser.',
+            es: 'Un servidor FastAPI en Render ejecuta un asistente RAG-lite: BM25 elige el módulo de Almera indicado y el modelo responde con su guía completa, con rutas exactas y fuentes, y avisa cuando algo no está documentado. El área aporta conocimiento subiendo archivos Word, PDF, PowerPoint o Excel a un ETL que califica cada uno con un semáforo antes de publicarlo. SABIA incluye además 10 skills de Claude, dos de ellas para generar presentaciones institucionales y diagramas de flujo, que ahorran hasta un día de trabajo por tarea, y 2 dashboards que analizan exportaciones de Excel en el navegador.',
+        },
+        gallery: [
+            '/assets/content/projects/SABIA/image2.png',
+            '/assets/content/projects/SABIA/image3.png',
+            '/assets/content/projects/SABIA/image4.png',
+            '/assets/content/projects/SABIA/image5.png',
+            '/assets/content/projects/SABIA/image6.png',
+        ],
+    },
+    'GenMax Academy': {
+        client: 'GenMax Academy',
+        objective: {
+            en: 'Present the academy and its training modules with a strong visual identity, and turn visitors into members of its WhatsApp community and its Skool platform.',
+            es: 'Presentar la academia y sus módulos de formación con una identidad visual fuerte, y convertir a los visitantes en miembros de su comunidad de WhatsApp y su plataforma en Skool.',
+        },
+        solution: {
+            en: 'A dark, high-contrast landing page built with React and Framer Motion that walks through the mission, training modules, team and community results, with clear calls to action and a responsive layout for desktop and mobile.',
+            es: 'Una landing oscura y de alto contraste hecha con React y Framer Motion que recorre la misión, los módulos de formación, el equipo y los resultados de la comunidad, con llamados a la acción claros y un diseño adaptable a escritorio y móvil.',
+        },
+        gallery: [
+            '/assets/content/projects/genmax/image.png',
+            '/assets/content/projects/genmax/image2.png',
+            '/assets/content/projects/genmax/image3.png',
+            '/assets/content/projects/genmax/image4.png',
+        ],
+    },
 }
 
 // Certifications (from the HV), shown on the Info page
@@ -109,7 +156,7 @@ export const TRANSLATIONS = {
             { name: 'Prompt engineering', desc: 'Reliable, structured outputs' },
         ],
         workTitle: 'My Work.',
-        filters: ['All', 'Apps', 'Libraries', 'Websites'],
+        filters: ['All', 'Professional', 'Personal'],
         categories: { 1: 'App', 2: 'Library', 3: 'Website' },
         visit: 'Visit ↗',
         project: {
@@ -117,6 +164,7 @@ export const TRANSLATIONS = {
             objective: 'Objective', challenge: 'Challenge', solution: 'Solution',
             live: 'Live project', demoBtn: 'View live demo',
             prev: 'Previous project', next: 'Next project',
+            enlarge: 'Enlarge image', close: 'Close',
         },
         contactTitle: 'Reach out.',
         contactIntro: 'Available for freelance projects and collaborations. Tell me what you have in mind.',
@@ -192,7 +240,7 @@ export const TRANSLATIONS = {
             { name: 'Prompt engineering', desc: 'Respuestas confiables y estructuradas' },
         ],
         workTitle: 'Proyectos.',
-        filters: ['Todos', 'Apps', 'Librerías', 'Sitios web'],
+        filters: ['Todos', 'Profesionales', 'Personales'],
         categories: { 1: 'App', 2: 'Librería', 3: 'Sitio web' },
         visit: 'Ver ↗',
         project: {
@@ -200,11 +248,13 @@ export const TRANSLATIONS = {
             objective: 'Objetivo', challenge: 'Reto', solution: 'Solución',
             live: 'Proyecto en vivo', demoBtn: 'Ver demo en vivo',
             prev: 'Proyecto anterior', next: 'Siguiente proyecto',
+            enlarge: 'Ampliar imagen', close: 'Cerrar',
         },
         contactTitle: 'Escríbeme.',
         contactIntro: 'Disponible para proyectos freelance y colaboraciones. Cuéntame qué tienes en mente.',
         form: { name: 'Nombre', namePh: 'Juan', phone: 'Teléfono', msg: 'Mensaje', msgPh: 'Cuéntame de tu proyecto', send: 'Enviar', sending: 'Enviando…', thanks: 'Gracias, recibí tu mensaje. Te respondo pronto.', error: 'Algo salió mal. Intenta de nuevo o escríbeme por correo.' },
         descs: {
+            'SABIA': 'Sistema de Automatización, Base de información e Inteligencia Artificial del área de Calidad de Capital Salud: un asistente web que responde con la documentación de Almera SGI, skills de Claude que generan presentaciones institucionales y diagramas de flujo, e informes que corren en el navegador.',
             'PinGym - Gym Saas & Fitness App': 'App de gestión para gimnasios (Gym as a Service): sedes, clientes, planes, rutinas, asistencia, lockers y comunicaciones. Los clientes se registran (incluso por QR) y ven sus rutinas, progreso y asistencia.',
             'QRMe - QR Generator App': 'Generador de códigos QR ligero y rápido hecho con Vue y Sass. Crea QR personalizados en segundos, previsualízalos y descárgalos en PNG de alta calidad.',
             'UInspired': 'Colección curada de componentes UI modulares, interfaces interactivas y exploraciones de diseño inspiradas en landing pages modernas.',
@@ -227,6 +277,7 @@ export const localizeProjects = (t) => projects.map(project => {
     return {
         ...project,
         category,
+        scope: PROJECT_SCOPE[project.nameProject] ?? SCOPE.PERSONAL,
         shortName,
         slug: shortName.toLowerCase().replace(/\s+/g, '-'), // used in the URL: #work/pingym
         categoryLabel: t.categories[category],
