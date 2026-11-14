@@ -73,6 +73,30 @@ const PROJECT_DETAILS = {
             '/assets/content/projects/genmax/image4.png',
         ],
     },
+    'KapleCSS - CSS Minimal Framework': {
+        year: 2026,
+        client: { en: 'Personal project', es: 'Proyecto personal' },
+        role: { en: 'Design & development', es: 'Diseño y desarrollo' },
+        objective: {
+            en: 'Build a design-first CSS framework that lets developers ship premium, consistent interfaces by linking a single file, with no build steps and no dependencies.',
+            es: 'Crear un framework CSS centrado en el diseño que permita lanzar interfaces premium y coherentes enlazando un solo archivo, sin pasos de build ni dependencias.',
+        },
+        challenge: {
+            en: 'Getting a polished, consistent look usually means setting up a build pipeline or rewriting the same colors, typography and spacing rules on every project, and keeping light and dark themes in sync by hand.',
+            es: 'Lograr un aspecto pulido y coherente suele exigir montar un pipeline de build o reescribir las mismas reglas de color, tipografía y espaciado en cada proyecto, y mantener a mano los temas claro y oscuro.',
+        },
+        solution: {
+            en: 'A Sass codebase organized with the 7-1 pattern compiles to one ~54 KB file driven by design tokens exposed as CSS variables. It includes native dark mode (automatic detection plus a data-theme toggle), a mobile-first grid, components such as buttons, forms, cards, tabs, alerts, tables and modals, and special effects like glassmorphism, gradient text, noise and background patterns. It is published on npm as kaple-css under the MIT license and can be used via npm, CDN (unpkg or jsDelivr) or Sass with @use, with a full documentation site that includes a skill for AI assistants.',
+            es: 'Un código Sass organizado con el patrón 7-1 que compila a un único archivo de ~54 KB basado en design tokens expuestos como variables CSS. Incluye modo oscuro nativo (detección automática y toggle con data-theme), un grid mobile-first, componentes como botones, formularios, cards, tabs, alertas, tablas y modales, y efectos especiales como glassmorphism, texto con degradado, noise y patrones de fondo. Está publicado en npm como kaple-css bajo licencia MIT y se puede usar vía npm, CDN (unpkg o jsDelivr) o Sass con @use, con un sitio de documentación completo que incluye una skill para asistentes de IA.',
+        },
+        gallery: [
+            '/assets/content/projects/kaplecss/image1.png',
+            '/assets/content/projects/kaplecss/image.png',
+            '/assets/content/projects/kaplecss/image2.png',
+            '/assets/content/projects/kaplecss/image3.png',
+            '/assets/content/projects/kaplecss/image4.png',
+        ],
+    },
 }
 
 // Certifications (from the HV), shown on the Info page
